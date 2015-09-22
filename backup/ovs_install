@@ -1,0 +1,53 @@
+#function openvswitch_src {
+	#echo "Build Openvswitch from source code..."
+	#apt-get update
+    #cd $ROOT_PATH   
+    #OVS_SRC=openvswitch-$OVS_VERSION
+    #OVS_TARBALL_LOC=http://openvswitch.org/releases
+	#rm -rf openvswitch*
+		#if wget $OVS_TARBALL_LOC/openvswitch-$OVS_VERSION.tar.gz 2> /dev/null; then
+				#tar xzf openvswitch-$OVS_VERSION.tar.gz
+		#else
+			#echo "Failed to find OVS at $OVS_TARBALL_LOC/openvswitch-$OVS_RELEASE.tar.gz"
+			#cd $ROOT_PATH
+				#return
+		#fi
+		#sudo apt-get -y autoremove		
+		##sudo apt-get remove openvswitch-common openvswitch-datapath-dkms openvswitch-controller \
+		##					openvswitch-pki openvswitch-switch
+		#apt-get install -y git automake autoconf gcc uml-utilities libtool build-essential git pkg-config linux-headers-`uname -r`
+		#apt-get -y install build-essential fakeroot debhelper autoconf automake libtool automake libssl-dev \
+							#pkg-config bzip2 openssl python-all procps python-qt4 \
+							#python-zopeinterface python-twisted-conch dkms	
+		## OPTION 1; use Debian pre-built packages
+		## dpkg -i openvswitch-common*.deb openvswitch-datapath-dkms*.deb openvswitch-controller*.deb openvswitch-pki*.deb openvswitch-switch*.deb
+		#cd openvswitch-$OVS_VERSION	
+		#./boot.sh
+		#./configure --with-linux=/lib/modules/`uname -r`/build
+		 #make && make install
+		 #make modules_install
+		 #sudo rmmod openvswitch
+	     #depmod -a
+		 #insmod datapath/linux/openvswitch.ko
+	     #mkdir -p /usr/local/etc/openvswitch     
+		 #ovsdb-tool create /usr/local/etc/openvswitch/conf.db vswitchd/vswitch.ovsschema
+		 #ovsdb-server -v --remote=punix:/usr/local/var/run/openvswitch/db.sock \
+                     #--remote=db:Open_vSwitch,manager_options \
+                     #--private-key=db:SSL,private_key \
+                     #--certificate=db:SSL,certificate \
+                     #--pidfile --detach --log-file
+		 #ovs-vsctl --no-wait init
+		 #ovs-vswitchd --pidfile --detach
+	    #cd ..	    
+	    
+	    #echo "Test Openvswtch"
+	    #sudo /etc/init.d/openvswitch-controller stop
+	    #update-rc.d openvswitch-controller disable	    
+	    #echo "Start OVS server process:"
+	    #sudo /etc/init.d/openvswitch-switch start   
+	    #echo "Once you have finished, you can confirm that you have the latest Open vSwitch installed and the latest kernel module"
+	    #sudo ovs-vsctl show 
+	    
+	    
+	    
+

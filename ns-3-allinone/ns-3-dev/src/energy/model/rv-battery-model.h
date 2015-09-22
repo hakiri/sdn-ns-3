@@ -226,6 +226,9 @@ private:
   std::vector<Time> m_timeStamps; // time stamps of load profile
   Time m_lastSampleTime;
 
+  // Old variable in previous NS-3 versions
+  uint64_t m_counter;
+
   int m_numOfTerms; // # of terms for infinite sum in battery level estimation
 
   /**

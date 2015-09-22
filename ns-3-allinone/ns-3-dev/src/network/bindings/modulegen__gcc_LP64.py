@@ -819,6 +819,7 @@ def register_methods(root_module):
 
 def register_Ns3Address_methods(root_module, cls):
     cls.add_binary_comparison_operator('!=')
+    cls.add_binary_numeric_operator('+', root_module['ns3::Address'], root_module['ns3::Address'], param('int const', u'right'))
     cls.add_binary_comparison_operator('<')
     cls.add_output_stream_operator()
     cls.add_binary_comparison_operator('==')
@@ -7703,6 +7704,10 @@ def register_Ns3Node_methods(root_module, cls):
                    'ns3::TypeId', 
                    [], 
                    is_static=True)
+    ## node.h (module 'network'): bool ns3::Node::IsCognitiveRadio() [member function]
+    cls.add_method('IsCognitiveRadio', 
+                   'bool', 
+                   [])
     ## node.h (module 'network'): void ns3::Node::RegisterDeviceAdditionListener(ns3::Callback<void,ns3::Ptr<ns3::NetDevice>,ns3::empty,ns3::empty,ns3::empty,ns3::empty,ns3::empty,ns3::empty,ns3::empty,ns3::empty> listener) [member function]
     cls.add_method('RegisterDeviceAdditionListener', 
                    'void', 
@@ -7711,6 +7716,10 @@ def register_Ns3Node_methods(root_module, cls):
     cls.add_method('RegisterProtocolHandler', 
                    'void', 
                    [param('ns3::Callback< void, ns3::Ptr< ns3::NetDevice >, ns3::Ptr< ns3::Packet const >, unsigned short, ns3::Address const &, ns3::Address const &, ns3::NetDevice::PacketType, ns3::empty, ns3::empty, ns3::empty >', 'handler'), param('uint16_t', 'protocolType'), param('ns3::Ptr< ns3::NetDevice >', 'device'), param('bool', 'promiscuous', default_value='false')])
+    ## node.h (module 'network'): void ns3::Node::SetCognitiveRadio(bool isCR) [member function]
+    cls.add_method('SetCognitiveRadio', 
+                   'void', 
+                   [param('bool', 'isCR')])
     ## node.h (module 'network'): void ns3::Node::UnregisterDeviceAdditionListener(ns3::Callback<void,ns3::Ptr<ns3::NetDevice>,ns3::empty,ns3::empty,ns3::empty,ns3::empty,ns3::empty,ns3::empty,ns3::empty,ns3::empty> listener) [member function]
     cls.add_method('UnregisterDeviceAdditionListener', 
                    'void', 

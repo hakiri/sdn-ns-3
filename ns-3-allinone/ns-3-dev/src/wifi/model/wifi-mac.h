@@ -23,6 +23,9 @@
 
 #include "ns3/packet.h"
 #include "ns3/mac48-address.h"
+#include "ns3/node.h"
+#include "ns3/repository.h"
+#include "ns3/pu-model.h"
 #include "wifi-phy.h"
 #include "wifi-remote-station-manager.h"
 #include "ssid.h"
@@ -240,6 +243,12 @@ public:
    * \return the current compressed block ACK timeout duration.
    */
   virtual Time GetCompressedBlockAckTimeout (void) const;
+
+  virtual bool IsTxRadio (void) = 0;
+  virtual void SetTxRadio (bool isTx) = 0;
+  virtual bool IsRxRadio (void) = 0;
+  virtual void SetRxRadio (bool isRx, Ptr<Node> node, Ptr<Repository> repo,
+  Ptr<PUModel> puModel, Ptr<WifiPhy> phy) = 0;
 
   /**
    * \param packet the packet being enqueued

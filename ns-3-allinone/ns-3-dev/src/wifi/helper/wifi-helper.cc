@@ -139,6 +139,49 @@ WifiHelper::Install (const WifiPhyHelper &phy,
   return Install (phy, mac, NodeContainer (node));
 }
 
+
+NetDeviceContainer
+WifiHelper::InstallCR (Ptr<Repository> repo, Ptr<PUModel> puModel,
+                      const MobilityHelper &mobiHelper,
+                      const WifiPhyHelper &phyHelper,
+                      const WifiMacHelper &macHelper,
+                      NodeContainer c) const
+{
+  mobiHelper.Install(c);
+          NetDeviceContainer devices;
+          for (NodeContainer::Iterator i = c.Begin (); i != c.End (); ++i)
+            {
+              Ptr<Node> node = *i;
+              node->SetCognitiveRadio(true);
+                    for (int x=0; x<MAX_RADIO; x++)
+                      {
+                      Ptr<WifiNetDevice> device = CreateObject<WifiNetDevice> ();
+                      Ptr<WifiRemoteStationManager> manager = m_stationManager.Create<WifiRemoteStationManager> ();
+                      Ptr<WifiMac> mac = macHelper.Create ();
+                      Ptr<WifiPhy> phy = phyHelper.Create (node, device);
+                      mac->SetAddress (Mac48Address::Allocate ());
+                      mac->ConfigureStandard (m_standard);
+                      if (x == TRANSMITTER_RADIO)
+                        mac->SetTxRadio (true);
+                      if (x == RECEIVER_RADIO)
+                        {
+                          mac->SetRxRadio(true, node, repo, puModel, phy);
+                        }
+                      phy->ConfigureStandard (m_standard);
+                      device->SetMac (mac);
+                      device->SetPhy (phy);
+                      device->SetRemoteStationManager (manager);
+                      node->AddDevice (device);
+                      devices.Add (device);
+                      NS_LOG_DEBUG ("node=" << node << ", mob=" << node->GetObject<MobilityModel> ());
+                      }
+            }
+          return devices;
+}
+
+
+
+
 void
 WifiHelper::EnableLogComponents (void)
 {

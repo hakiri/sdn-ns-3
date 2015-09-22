@@ -160,6 +160,9 @@ private:
    * Notify that the device is switching channel.
    */
   void NotifyChannelSwitching (void);
+//  void NotifyChannelSwitching (Time duration, uint16_t toChannel);
+//  void NotifyChannelSensing (void);
+
   /**
    * Notify that the device has started to sleep.
    */
@@ -204,6 +207,12 @@ private:
   * The subclass is expected to flush the queue of packets.
   */
   virtual void DoNotifyChannelSwitching (void) = 0;
+
+
+//  virtual void DoNotifyChannelSwitching (Time duration, uint16_t toChannel) = 0;
+//  virtual void DoNotifyChannelSensing () = 0;
+
+
   /**
   * Called by DcfManager to notify a DcfState subclass that the device has
   * begun to sleep.
@@ -361,7 +370,12 @@ public:
    * During switching state, new packets can be enqueued in DcaTxop/EdcaTxop
    * but they won't access to the medium until the end of the channel switching.
    */
-  void NotifySwitchingStartNow (Time duration);
+  void NotifySwitchingStartNow (Time duration) ;
+
+  void NotifySwitchingStartNow_ (Time duration, uint16_t toChannel);
+  void NotifySensingStartNow (Time duration);
+
+
   /**
    * Notify the DCF that the device has been put in sleep mode.
    */
@@ -466,6 +480,9 @@ private:
    * \return the most recent time
    */
   Time MostRecent (Time a, Time b, Time c, Time d, Time e, Time f, Time g) const;
+
+  Time MostRecent (Time a, Time b, Time c, Time d, Time e, Time f, Time g, Time h) const;
+
   /**
    * Access will never be granted to the medium _before_
    * the time returned by this method.
@@ -531,7 +548,9 @@ private:
   Time m_lastBusyStart;
   Time m_lastBusyDuration;
   Time m_lastSwitchingStart;
+  Time m_lastSensingStart;
   Time m_lastSwitchingDuration;
+  Time m_lastSensingDuration;
   bool m_rxing;
   bool m_sleeping;
   Time m_eifsNoDifs;

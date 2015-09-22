@@ -28,6 +28,8 @@
 #include "ns3/object-factory.h"
 #include "ns3/ipv4-l3-protocol.h"
 #include "ns3/ipv6-l3-protocol.h"
+#include "ns3/repository.h"
+#include "ns3/aodv-module.h"
 #include "internet-trace-helper.h"
 
 namespace ns3 {
@@ -132,6 +134,19 @@ public:
   void Install (Ptr<Node> node) const;
 
   /**
+   * Aggregate implementations of the ns3::Ipv4, ns3::Ipv6, ns3::Udp, and ns3::Tcp classes
+   * onto the provided node.  This method will assert if called on a node that
+   * already has an Ipv4 object aggregated to it.
+   *
+   * \param repo The Cognitive Radio repository.
+   * \param node The node on which to install the stack.
+   */
+  void InstallCR (Ptr<Repository> repo, Ptr<Node> node) const;
+
+
+
+
+  /**
    * For each node in the input container, aggregate implementations of the 
    * ns3::Ipv4, ns3::Ipv6, ns3::Udp, and, ns3::Tcp classes.  The program will assert 
    * if this method is called on a container with a node that already has
@@ -141,6 +156,19 @@ public:
    * new stacks.
    */
   void Install (NodeContainer c) const;
+
+  /**
+   * For each node in the input container, aggregate implementations of the
+   * ns3::Ipv4, ns3::Ipv6, ns3::Udp, and, ns3::Tcp classes.  The program will assert
+   * if this method is called on a container with a node that already has
+   * an Ipv4 object aggregated to it.
+   *
+   * \param repo The Cognitive Radio repository.
+   * \param c NodeContainer that holds the set of nodes on which to install the
+   * new stacks.
+   */
+  void InstallCR (Ptr<Repository> repo, NodeContainer c) const;
+
 
   /**
    * Aggregate IPv4, IPv6, UDP, and TCP stacks to all nodes in the simulation

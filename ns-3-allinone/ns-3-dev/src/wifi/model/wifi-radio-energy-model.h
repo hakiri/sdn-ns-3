@@ -114,7 +114,13 @@ public:
    *
    * Defined in ns3::WifiPhyListener
    */
+
+
   virtual void NotifySwitchingStart (Time duration);
+
+  virtual void NotifySwitchingStart_ (Time duration, uint16_t toChannel);
+  virtual void NotifySensingStart (Time duration);
+
 
   /**
    * Defined in ns3::WifiPhyListener

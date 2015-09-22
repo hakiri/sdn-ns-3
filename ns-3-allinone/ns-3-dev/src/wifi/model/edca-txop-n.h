@@ -219,6 +219,9 @@ public:
    * When a channel switching occurs, enqueued packets are removed.
    */
   void NotifyChannelSwitching (void);
+
+  void NotifyChannelSwitching (Time duration);
+  void NotifyChannelSensing (void);
   /**
    * When sleep operation occurs, re-insert pending packet into front of the queue
    */

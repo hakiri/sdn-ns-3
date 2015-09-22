@@ -55,6 +55,7 @@ public:
    */
   static TypeId GetTypeId (void);
   static const uint16_t PROT_NUMBER; //!< ARP protocol number (0x0806)
+//  static const uint16_t PROT_NUMBER = 0x0806; //!< ARP protocol number (0x0806)
 
   ArpL3Protocol ();
   virtual ~ArpL3Protocol ();

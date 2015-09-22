@@ -39,6 +39,7 @@ private:
   virtual void DoNotifyInternalCollision (void);
   virtual void DoNotifyCollision (void);
   virtual void DoNotifyChannelSwitching (void);
+  virtual void DoNotifyChannelSensing (void);
   virtual void DoNotifySleep (void);
   virtual void DoNotifyWakeUp (void);
 
@@ -69,8 +70,7 @@ public:
   void NotifyInternalCollision (uint32_t i);
   void NotifyCollision (uint32_t i);
   void NotifyChannelSwitching (uint32_t i);
-
-
+  void NotifyChannelSensing (uint32_t i);
 private:
   void StartTest (uint64_t slotTime, uint64_t sifs, uint64_t eifsNoDifsNoSifs, uint32_t ackTimeoutValue = 20);
   void AddDcfState (uint32_t aifsn);
@@ -143,6 +143,11 @@ DcfStateTest::DoNotifyChannelSwitching (void)
   m_test->NotifyChannelSwitching (m_i);
 }
 
+void DcfStateTest::DoNotifyChannelSensing (void)
+{
+  m_test->NotifyChannelSensing (m_i);
+}
+
 void
 DcfStateTest::DoNotifySleep (void)
 {
@@ -202,6 +207,18 @@ DcfManagerTest::NotifyCollision (uint32_t i)
 
 void
 DcfManagerTest::NotifyChannelSwitching (uint32_t i)
+{
+  DcfStateTest *state = m_dcfStates[i];
+  if (!state->m_expectedGrants.empty ())
+    {
+      std::pair<uint64_t, uint64_t> expected = state->m_expectedGrants.front ();
+      state->m_expectedGrants.pop_front ();
+      NS_TEST_EXPECT_MSG_EQ (Simulator::Now (), MicroSeconds (expected.second), "Expected grant is now");
+    }
+}
+
+void
+DcfManagerTest::NotifyChannelSensing (uint32_t i)
 {
   DcfStateTest *state = m_dcfStates[i];
   if (!state->m_expectedGrants.empty ())

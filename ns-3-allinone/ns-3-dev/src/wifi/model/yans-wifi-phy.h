@@ -83,6 +83,20 @@ public:
    * \param id the channel number
    */
   void SetChannelNumber (uint16_t id);
+
+
+    /**
+     * \brief Start sensing on current channel
+     *
+     * \param duration Time to sense
+     *
+     */
+    void StartSensing (Time duration);
+
+
+
+
+
   /**
    * Return the current channel number.
    *
@@ -262,6 +276,8 @@ public:
    * \return the mobility model this PHY is associated with
    */
   Ptr<MobilityModel> GetMobility (void);
+  Time GetSwitchingDelay(void);
+
   /**
    * Return the minimum available transmission power level (dBm).
    * \return the minimum available transmission power level (dBm)
@@ -281,6 +297,13 @@ public:
 
   virtual void SetReceiveOkCallback (WifiPhy::RxOkCallback callback);
   virtual void SetReceiveErrorCallback (WifiPhy::RxErrorCallback callback);
+
+  virtual void SetSenseEndedCallback(WifiPhy::SnsEndedCallback callback);
+  virtual void SetHandoffEndedCallback(WifiPhy::HandoffEndedCallback callback);
+
+
+
+
   virtual void SendPacket (Ptr<const Packet> packet, WifiTxVector txVector, enum WifiPreamble preamble, uint8_t packetType, uint32_t mpduReferenceNumber);
   virtual void RegisterListener (WifiPhyListener *listener);
   virtual void UnregisterListener (WifiPhyListener *listener);
@@ -292,6 +315,7 @@ public:
   virtual bool IsStateRx (void);
   virtual bool IsStateTx (void);
   virtual bool IsStateSwitching (void);
+  virtual bool IsStateSensing (void);
   virtual bool IsStateSleep (void);
   virtual Time GetStateDuration (void);
   virtual Time GetDelayUntilIdle (void);
@@ -578,6 +602,12 @@ private:
   Ptr<WifiPhyStateHelper> m_state;      //!< Pointer to WifiPhyStateHelper
   InterferenceHelper m_interference;    //!< Pointer to InterferenceHelper
   Time m_channelSwitchDelay;            //!< Time required to switch between channel
+
+  //sensing ended callback
+  SnsEndedCallback m_senseEndedCallback;
+  //handoff ended callback
+  HandoffEndedCallback m_handoffEndedCallback;
+
   uint16_t m_mpdusNum;                  //!< carries the number of expected mpdus that are part of an A-MPDU
   bool m_plcpSuccess;                   //!< Flag if the PLCP of the packet or the first MPDU in an A-MPDU has been received
 };

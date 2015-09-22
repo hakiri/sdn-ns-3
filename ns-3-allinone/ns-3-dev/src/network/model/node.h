@@ -27,6 +27,7 @@
 #include "ns3/callback.h"
 #include "ns3/ptr.h"
 #include "ns3/net-device.h"
+#include "ns3/common-cognitive-header.h"
 
 namespace ns3 {
 
@@ -197,6 +198,9 @@ public:
    * \returns true if checksums are enabled, false otherwise.
    */
   static bool ChecksumEnabled (void);
+  
+   void SetCognitiveRadio(bool isCR);
+   bool IsCognitiveRadio(void);
 
 
 protected:
@@ -277,6 +281,8 @@ private:
   std::vector<Ptr<Application> > m_applications; //!< Applications associated to this node
   ProtocolHandlerList m_handlers; //!< Protocol handlers in the node
   DeviceAdditionListenerList m_deviceAdditionListeners; //!< Device addition listeners in the node
+  // Added for cognitive radio
+  bool m_isCognitiveRadio;
 };
 
 } // namespace ns3

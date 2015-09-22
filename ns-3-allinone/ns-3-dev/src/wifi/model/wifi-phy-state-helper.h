@@ -106,6 +106,7 @@ public:
    * \return true if the current state is SWITCHING, false otherwise
    */
   bool IsStateSwitching (void);
+  bool IsStateSensing (void);
   /**
    * Check whether the current state is SLEEP.
    *
@@ -153,6 +154,8 @@ public:
    * \param switchingDuration the duration of required to switch the channel
    */
   void SwitchToChannelSwitching (Time switchingDuration);
+//  void SwitchToChannelSwitching (Time switchingDuration, uint16_t toChannel);
+//  void SwitchToChannelSensing (Time sensingDuration);
   /**
    * Switch from RX after the reception was successful.
    *
@@ -279,6 +282,8 @@ private:
    * \param duration the delay to switch the channel
    */
   void NotifySwitchingStart (Time duration);
+//  void NotifySwitchingStart (Time duration, uint16_t toChannel);
+//  void NotifySensingStart (Time duration);
   /**
    * Notify all WifiPhyListener that we are going to sleep
    */
@@ -298,12 +303,15 @@ private:
   Time m_endRx;
   Time m_endCcaBusy;
   Time m_endSwitching;
+  Time m_endSensing;
   Time m_startTx;
   Time m_startRx;
   Time m_startCcaBusy;
   Time m_startSwitching;
+  Time m_startSensing;
   Time m_startSleep;
   Time m_previousStateChangeTime;
+
 
   Listeners m_listeners;
   TracedCallback<Ptr<const Packet>, double, WifiMode, enum WifiPreamble> m_rxOkTrace;

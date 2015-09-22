@@ -60,9 +60,14 @@ class RoutingTableEntry
 {
 public:
   /// c-to
+//  RoutingTableEntry (Ptr<NetDevice> dev = 0,Ipv4Address dst = Ipv4Address (), bool vSeqNo = false, uint32_t m_seqNo = 0,
+//                     Ipv4InterfaceAddress iface = Ipv4InterfaceAddress (), uint16_t  hops = 0,
+//                     Ipv4Address nextHop = Ipv4Address (), Time lifetime = Simulator::Now ());
+
   RoutingTableEntry (Ptr<NetDevice> dev = 0,Ipv4Address dst = Ipv4Address (), bool vSeqNo = false, uint32_t m_seqNo = 0,
                      Ipv4InterfaceAddress iface = Ipv4InterfaceAddress (), uint16_t  hops = 0,
-                     Ipv4Address nextHop = Ipv4Address (), Time lifetime = Simulator::Now ());
+                     Ipv4Address nextHop = Ipv4Address (), Time lifetime = Simulator::Now (),
+                     uint16_t channelNo = 1);
 
   ~RoutingTableEntry ();
 
@@ -118,6 +123,8 @@ public:
   uint32_t GetSeqNo () const { return m_seqNo; }
   void SetHop (uint16_t hop) { m_hops = hop; }
   uint16_t GetHop () const { return m_hops; }
+  void SetChannel (uint16_t channel) { m_channel = channel; }
+  uint16_t GetChannel () const { return m_channel; }
   void SetLifeTime (Time lt) { m_lifeTime = lt + Simulator::Now (); }
   Time GetLifeTime () const { return m_lifeTime - Simulator::Now (); }
   void SetFlag (RouteFlags flag) { m_flag = flag; }
@@ -178,6 +185,8 @@ private:
   bool m_blackListState;
   /// Time for which the node is put into the blacklist
   Time m_blackListTimeout;
+  /// Channel number for route's destination
+  uint16_t m_channel;
 };
 
 /**

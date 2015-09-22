@@ -118,7 +118,14 @@ public:
    * channel switching. Listeners should assume that the
    * channel implicitely reverts to the idle or busy states.
    */
-  virtual void NotifySwitchingStart (Time duration) = 0;
+//  virtual void NotifySwitchingStart (Time duration) = 0;
+//  virtual void NotifySwitchingStart (Time duration, uint16_t toChannel) = 0;
+  /**
+  * \param duration the expected channel sensing duration.
+  */
+  // virtual void NotifySensingStart (Time duration) = 0;
+
+
   /**
    * Notify listeners that we went to sleep
    */
@@ -164,6 +171,10 @@ public:
      */
     SWITCHING,
     /**
+     * The PHY layer is sensing the channel.
+     */
+    SENSING,
+    /**
      * The PHY layer is sleeping.
      */
     SLEEP
@@ -181,6 +192,9 @@ public:
    * arg2: snr of packet
    */
   typedef Callback<void, Ptr<const Packet>, double> RxErrorCallback;
+
+  typedef Callback<void> SnsEndedCallback;
+  typedef Callback<void> HandoffEndedCallback;
 
   static TypeId GetTypeId (void);
 
@@ -214,6 +228,20 @@ public:
    *        upon erroneous packet reception.
    */
   virtual void SetReceiveErrorCallback (RxErrorCallback callback) = 0;
+
+  /**
+  * \param callback the callback to invoke
+  *        when sensing is ended
+  */
+
+  virtual void SetSenseEndedCallback(SnsEndedCallback callback) = 0;
+  /**
+  * \param callback the callback to invoke
+  *        when sensing is ended
+  */
+  virtual void SetHandoffEndedCallback(HandoffEndedCallback callback) = 0;
+
+
 
   /**
    * \param packet the packet to send
@@ -274,6 +302,12 @@ public:
    * \return true of the current state of the PHY layer is WifiPhy::SWITCHING, false otherwise.
    */
   virtual bool IsStateSwitching (void) = 0;
+
+  /**
+   * \returns true if the current of the PHY layer is WifiPhy::SENSING, false otherwise.
+   */
+  virtual bool IsStateSensing (void) = 0;
+
   /**
    * \return true if the current state of the PHY layer is WifiPhy::SLEEP, false otherwise.
    */
@@ -528,6 +562,15 @@ public:
    * \return the current channel number
    */
   virtual uint16_t GetChannelNumber (void) const = 0;
+
+  /**
+  * \brief Start sensing on current channel
+  *
+  * \param duration Time to sense
+  *
+  */
+  virtual void StartSensing (Time duration) = 0;
+
   /**
    * \return the required time for channel switch operation of this WifiPhy
    */

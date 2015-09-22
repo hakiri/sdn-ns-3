@@ -39,6 +39,7 @@
 #include "ns3/ipv4-routing-protocol.h"
 #include "ns3/ipv4-interface.h"
 #include "ns3/ipv4-l3-protocol.h"
+#include "ns3/repository.h"
 #include <map>
 
 namespace ns3
@@ -73,6 +74,10 @@ public:
   virtual void SetIpv4 (Ptr<Ipv4> ipv4);
   virtual void PrintRoutingTable (Ptr<OutputStreamWrapper> stream) const;
 
+  void SetRepository(Ptr<Repository> repo);
+  /// Send hello
+  void SendHello ();
+
   // Handle protocol parameters
   Time GetMaxQueueTime () const { return MaxQueueTime; }
   void SetMaxQueueTime (Time t);
@@ -86,6 +91,7 @@ public:
   bool GetHelloEnable () const { return EnableHello; }
   void SetBroadcastEnable (bool f) { EnableBroadcast = f; }
   bool GetBroadcastEnable () const { return EnableBroadcast; }
+
 
  /**
   * Assign a fixed random variable stream number to the random variables
@@ -144,6 +150,9 @@ private:
   std::map< Ptr<Socket>, Ipv4InterfaceAddress > m_socketSubnetBroadcastAddresses;
   /// Loopback device used to defer RREQ until packet will be fully formed
   Ptr<NetDevice> m_lo; 
+
+  /// Pointer to cognitive radio repository
+  Ptr<Repository> m_crRepository;
 
   /// Routing table
   RoutingTable m_routingTable;
@@ -217,9 +226,10 @@ private:
   ///\name Send
   //\{
   /// Forward packet from route request queue
-  void SendPacketFromQueue (Ipv4Address dst, Ptr<Ipv4Route> route);
-  /// Send hello
-  void SendHello ();
+  //  void SendPacketFromQueue (Ipv4Address dst, Ptr<Ipv4Route> route);
+  void SendPacketFromQueue (Ipv4Address dst, Ptr<Ipv4Route> route, uint16_t channel);
+
+
   /// Send RREQ
   void SendRequest (Ipv4Address dst);
   /// Send RREP

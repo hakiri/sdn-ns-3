@@ -251,6 +251,7 @@ private:
    * \returns true if the operand a is less than operand b
    */
   friend bool operator < (const Address &a, const Address &b);
+  friend Address& operator + (Address &a, const int b);
 
   /**
    * \brief Stream insertion operator.
@@ -280,6 +281,7 @@ ATTRIBUTE_HELPER_HEADER (Address);
 bool operator == (const Address &a, const Address &b);
 bool operator != (const Address &a, const Address &b);
 bool operator < (const Address &a, const Address &b);
+Address& operator + (Address &a, const int b);
 std::ostream& operator<< (std::ostream& os, const Address & address);
 std::istream& operator>> (std::istream& is, Address & address);
 

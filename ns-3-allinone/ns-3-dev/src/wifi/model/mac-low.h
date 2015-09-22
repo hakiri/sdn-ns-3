@@ -745,6 +745,14 @@ public:
    * occurs, pending MAC transmissions (RTS, CTS, DATA and ACK) are cancelled.
    */
   void NotifySwitchingStartNow (Time duration);
+
+  /**
+   * \param duration sensing delay duration
+   *
+   * When channel sensing occurs, pending mac transmissions are canceled
+   */
+  void NotifySensingStartNow (Time duration);
+
   /**
    * This method is typically invoked by the PhyMacLowListener to notify
    * the MAC layer that the device has been put into sleep mode. When the device is put
@@ -786,6 +794,14 @@ public:
    * associated to this AC.
    */
   void RegisterBlockAckListenerForAc (enum AcIndex ac, MacLowAggregationCapableTransmissionListener *listener);
+
+
+  void SetTxRadio (bool isTx);
+  bool IsTxRadio (void);
+  void SetRxRadio (bool isRx);
+  bool IsRxRadio (void);
+  Ptr<WifiPhy> GetPhy (void);
+
   /**
    * \param packet the packet to be aggregated. If the aggregation is succesfull, it corresponds either to the first data packet that will be aggregated or to the BAR that will be piggybacked at the end of the A-MPDU.
    * \param hdr the WifiMacHeader for the packet.
@@ -1343,6 +1359,8 @@ private:
   Time m_lastNavDuration;  //!< The duration of the latest NAV
 
   bool m_promisc;  //!< Flag if the device is operating in promiscuous mode
+  bool m_tx;
+  bool m_rx;
   bool m_ampdu;    //!< Flag if the current transmission involves an A-MPDU
 
   class PhyMacLowListener * m_phyMacLowListener; //!< Listener needed to monitor when a channel switching occurs.

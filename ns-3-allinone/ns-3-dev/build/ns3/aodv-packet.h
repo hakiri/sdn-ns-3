@@ -101,10 +101,15 @@ class RreqHeader : public Header
 {
 public:
   /// c-tor
-  RreqHeader (uint8_t flags = 0, uint8_t reserved = 0, uint8_t hopCount = 0,
+/*  RreqHeader (uint8_t flags = 0, uint8_t reserved = 0, uint8_t hopCount = 0,
               uint32_t requestID = 0, Ipv4Address dst = Ipv4Address (),
               uint32_t dstSeqNo = 0, Ipv4Address origin = Ipv4Address (),
               uint32_t originSeqNo = 0);
+*/
+  RreqHeader (uint8_t flags = 0, uint8_t reserved = 0, uint8_t hopCount = 0,
+              uint32_t requestID = 0, Ipv4Address dst = Ipv4Address (),
+              uint32_t dstSeqNo = 0, Ipv4Address origin = Ipv4Address (),
+              uint32_t originSeqNo = 0, uint16_t channel = 1);
 
   // Header serialization/deserialization
   static TypeId GetTypeId ();
@@ -128,6 +133,14 @@ public:
   void SetOriginSeqno (uint32_t s) { m_originSeqNo = s; }
   uint32_t GetOriginSeqno () const { return m_originSeqNo; }
 
+  // Function Added for cognitive radio
+  /**
+   * @brief SetRXChannel
+   * @param s
+   */
+  void SetRXChannel (uint16_t s) { m_channelNo = s; }
+  uint16_t GetRXChannel () const { return m_channelNo; }
+
   // Flags
   void SetGratiousRrep (bool f);
   bool GetGratiousRrep () const;
@@ -146,6 +159,7 @@ private:
   uint32_t       m_dstSeqNo;       ///< Destination Sequence Number
   Ipv4Address    m_origin;         ///< Originator IP Address
   uint32_t       m_originSeqNo;    ///< Source Sequence Number
+  uint16_t       m_channelNo;      ///< RX channel of source
 };
 
 std::ostream & operator<< (std::ostream & os, RreqHeader const &);
@@ -175,7 +189,8 @@ public:
   /// c-tor
   RrepHeader (uint8_t prefixSize = 0, uint8_t hopCount = 0, Ipv4Address dst =
                 Ipv4Address (), uint32_t dstSeqNo = 0, Ipv4Address origin =
-                Ipv4Address (), Time lifetime = MilliSeconds (0));
+                Ipv4Address (), Time lifetime = MilliSeconds (0),
+                uint16_t channel = 1);
   // Header serialization/deserialization
   static TypeId GetTypeId ();
   TypeId GetInstanceTypeId () const;
@@ -196,6 +211,14 @@ public:
   void SetLifeTime (Time t);
   Time GetLifeTime () const;
 
+  //Function added for cognitive radio functionalities
+  /**
+   * @brief SetRXChannel
+   * @param s
+   */
+  void SetRXChannel (uint16_t s) { m_channelNo = s; }
+  uint16_t GetRXChannel () const { return m_channelNo; }
+
   // Flags
   void SetAckRequired (bool f);
   bool GetAckRequired () const;
@@ -214,6 +237,7 @@ private:
   uint32_t      m_dstSeqNo;         ///< Destination Sequence Number
   Ipv4Address     m_origin;           ///< Source IP Address
   uint32_t      m_lifeTime;         ///< Lifetime (in milliseconds)
+  uint16_t      m_channelNo;        ///< Source RX channel number
 };
 
 std::ostream & operator<< (std::ostream & os, RrepHeader const &);

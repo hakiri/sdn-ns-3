@@ -6,6 +6,7 @@ from ns.aodv import *
 from ns.applications import *
 from ns.bridge import *
 from ns.buildings import *
+from ns.cognitive import *
 from ns.config_store import *
 from ns.core import *
 from ns.csma import *
@@ -34,6 +35,7 @@ from ns.tap_bridge import *
 from ns.topology_read import *
 from ns.uan import *
 from ns.virtual_net_device import *
+from ns.visualizer import *
 from ns.wave import *
 from ns.wifi import *
 from ns.wimax import *

@@ -27,6 +27,7 @@
 #include "ns3/ipv4-interface-address.h"
 #include "ns3/ptr.h"
 #include "ns3/object.h"
+#include "ns3/cognitive-packet-tags.h"
 
 namespace ns3 {
 

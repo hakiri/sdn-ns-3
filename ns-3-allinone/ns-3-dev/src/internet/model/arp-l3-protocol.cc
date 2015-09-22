@@ -304,11 +304,27 @@ ArpL3Protocol::Lookup (Ptr<Packet> packet, Ipv4Address destination,
             } 
           else if (entry->IsAlive ()) 
             {
-              NS_LOG_LOGIC ("node="<<m_node->GetId ()<<
+                         NS_LOG_LOGIC ("node="<<m_node->GetId ()<<
+                                       ", alive entry for " << destination << " valid -- send");
+                         *hardwareDestination = entry->GetMacAddress ();
+                         return true;
+            }
+            /*
+
+            { FIX ME
+               NS_LOG_LOGIC ("node="<<m_node->GetId ()<<
                             ", alive entry for " << destination << " valid -- send");
-              *hardwareDestination = entry->GetMacAddress ();
+
+              Address destAddress = entry->GetMacAddress();             
+             // PacketTypePacketTag bt;
+             // int bytes = packet->PeekPacketTag(bt);
+             // if (!bytes && m_node->IsCognitiveRadio()) {
+             //       destAddress = destAddress + (RECEIVER_RADIO-CONTROL_RADIO); // go to RX MAC on receiver
+             //               }
+                *hardwareDestination = destAddress;
               return true;
             } 
+            */
           else if (entry->IsWaitReply ()) 
             {
               NS_LOG_LOGIC ("node="<<m_node->GetId ()<<
@@ -322,8 +338,20 @@ ArpL3Protocol::Lookup (Ptr<Packet> packet, Ipv4Address destination,
             {
               NS_LOG_LOGIC ("node="<<m_node->GetId ()<<
                             ", permanent for " << destination << "valid -- send");
-              *hardwareDestination = entry->GetMacAddress ();
+				*hardwareDestination = entry->GetMacAddress ();
+              return true;					
+             /*
+              *  FIX ME
+              *  hardwareDestination = entry->GetMacAddress ();
+              Address destAddress = entry->GetMacAddress();
+              PacketTypePacketTag bt;
+              int bytes = packet->PeekPacketTag(bt);
+               if (!bytes && m_node->IsCognitiveRadio()) {
+                              destAddress = destAddress + (RECEIVER_RADIO-CONTROL_RADIO); // go to RX MAC on receiver
+                            }
+                            *hardwareDestination = destAddress;
               return true;
+              * */
             }
           else
             {

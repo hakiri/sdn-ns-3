@@ -1646,6 +1646,156 @@ _wrap_PyNs3Address__tp_richcompare (PyNs3Address *PYBINDGEN_UNUSED(self), PyNs3A
     return Py_NotImplemented;
 }
 
+
+PyObject* _wrap_convert_c2py__ns3__Address(ns3::Address *cvalue)
+{
+    PyObject *py_retval;
+    PyNs3Address *py_Address;
+    
+    py_Address = PyObject_New(PyNs3Address, &PyNs3Address_Type);
+    py_Address->flags = PYBINDGEN_WRAPPER_FLAG_NONE;
+    py_Address->obj = new ns3::Address(*cvalue);
+    PyNs3Address_wrapper_registry[(void *) py_Address->obj] = (PyObject *) py_Address;
+    py_retval = Py_BuildValue((char *) "N", py_Address);
+    return py_retval;
+}
+
+
+int _wrap_convert_py2c__ns3__Address(PyObject *value, ns3::Address *address)
+{
+    PyObject *py_retval;
+    PyNs3Address *tmp_Address;
+    
+    py_retval = Py_BuildValue((char *) "(O)", value);
+    if (!PyArg_ParseTuple(py_retval, (char *) "O!", &PyNs3Address_Type, &tmp_Address)) {
+        Py_DECREF(py_retval);
+        return 0;
+    }
+    *address = *tmp_Address->obj;
+    Py_DECREF(py_retval);
+    return 1;
+}
+
+
+int _wrap_convert_py2c__int(PyObject *value, int *address)
+{
+    PyObject *py_retval;
+    
+    py_retval = Py_BuildValue((char *) "(O)", value);
+    if (!PyArg_ParseTuple(py_retval, (char *) "i", &*address)) {
+        Py_DECREF(py_retval);
+        return 0;
+    }
+    Py_DECREF(py_retval);
+    return 1;
+}
+
+static PyObject*
+Ns3Address__nb_add (PyObject *py_left, PyObject *py_right)
+{
+    {
+        ns3::Address left;
+        int right;
+        if (_wrap_convert_py2c__ns3__Address(py_left, &left) && _wrap_convert_py2c__int(py_right, &right)) {
+            ns3::Address result = (left + right);
+            return _wrap_convert_c2py__ns3__Address(&result);
+        }
+        PyErr_Clear();
+    }
+    Py_INCREF(Py_NotImplemented);
+    return Py_NotImplemented;
+}
+static PyNumberMethods Ns3Address__py_number_methods = {
+#if PY_VERSION_HEX < 0x03000000
+    (binaryfunc) Ns3Address__nb_add,
+    (binaryfunc) NULL,
+    (binaryfunc) NULL,
+    (binaryfunc) NULL,
+    (binaryfunc) NULL,
+    (binaryfunc) NULL,
+    (ternaryfunc) NULL,
+    (unaryfunc) NULL,
+    (unaryfunc) NULL,
+    (unaryfunc) NULL,
+    (inquiry) NULL,
+    (unaryfunc) NULL,
+    (binaryfunc) NULL,
+    (binaryfunc) NULL,
+    (binaryfunc) NULL,
+    (binaryfunc) NULL,
+    (binaryfunc) NULL,
+    (coercion) NULL,
+    (unaryfunc) NULL,
+    (unaryfunc) NULL,
+    (unaryfunc) NULL,
+    (unaryfunc) NULL,
+    (unaryfunc) NULL,
+    /* Added in release 2.0 */
+    (binaryfunc) NULL,
+    (binaryfunc) NULL,
+    (binaryfunc) NULL,
+    (binaryfunc) NULL,
+    (binaryfunc) NULL,
+    (ternaryfunc) NULL,
+    (binaryfunc) NULL,
+    (binaryfunc) NULL,
+    (binaryfunc) NULL,
+    (binaryfunc) NULL,
+    (binaryfunc) NULL,
+
+    /* Added in release 2.2 */
+    /* The following require the Py_TPFLAGS_HAVE_CLASS flag */
+    (binaryfunc) NULL,
+    (binaryfunc) NULL,
+    (binaryfunc) NULL,
+    (binaryfunc) NULL,
+
+#if PY_VERSION_HEX >= 0x020500F0
+    /* Added in release 2.5 */
+    (unaryfunc) NULL,
+
+#endif
+#else /* Python 3 changed this structure a lot */
+(binaryfunc) Ns3Address__nb_add,
+(binaryfunc) NULL,
+(binaryfunc) NULL,
+(binaryfunc) NULL,
+(binaryfunc) NULL,
+(ternaryfunc) NULL,
+(unaryfunc) NULL,
+(unaryfunc) NULL,
+(unaryfunc) NULL,
+(inquiry) NULL,
+(unaryfunc) NULL,
+(binaryfunc) NULL,
+(binaryfunc) NULL,
+(binaryfunc) NULL,
+(binaryfunc) NULL,
+(binaryfunc) NULL,
+(unaryfunc) NULL,
+NULL,
+(unaryfunc) NULL,
+
+(binaryfunc) NULL,
+(binaryfunc) NULL,
+(binaryfunc) NULL,
+(binaryfunc) NULL,
+(ternaryfunc) NULL,
+(binaryfunc) NULL,
+(binaryfunc) NULL,
+(binaryfunc) NULL,
+(binaryfunc) NULL,
+(binaryfunc) NULL,
+
+(binaryfunc) NULL,
+(binaryfunc) NULL,
+(binaryfunc) NULL,
+(binaryfunc) NULL,
+
+(unaryfunc) NULL,
+#endif
+};
+
 PyTypeObject PyNs3Address_Type = {
     PyVarObject_HEAD_INIT(NULL, 0)
     (char *) "network.Address",            /* tp_name */
@@ -1658,7 +1808,7 @@ PyTypeObject PyNs3Address_Type = {
     (setattrfunc)NULL,       /* tp_setattr */
     (cmpfunc)NULL,           /* tp_compare */
     (reprfunc)NULL,             /* tp_repr */
-    (PyNumberMethods*)NULL,     /* tp_as_number */
+    (PyNumberMethods*)&Ns3Address__py_number_methods,     /* tp_as_number */
     (PySequenceMethods*)NULL, /* tp_as_sequence */
     (PyMappingMethods*)NULL,   /* tp_as_mapping */
     (hashfunc)NULL,             /* tp_hash */
@@ -1667,7 +1817,7 @@ PyTypeObject PyNs3Address_Type = {
     (getattrofunc)NULL,     /* tp_getattro */
     (setattrofunc)NULL,     /* tp_setattro */
     (PyBufferProcs*)NULL,  /* tp_as_buffer */
-    Py_TPFLAGS_DEFAULT,                      /* tp_flags */
+    Py_TPFLAGS_DEFAULT|Py_TPFLAGS_CHECKTYPES,                      /* tp_flags */
     NULL,                        /* Documentation string */
     (traverseproc)NULL,     /* tp_traverse */
     (inquiry)NULL,             /* tp_clear */
@@ -18077,20 +18227,6 @@ int _wrap_convert_py2c__ns3__SequenceNumber__lt___unsigned_int__int___gt__(PyObj
         return 0;
     }
     *address = *tmp_SequenceNumber32->obj;
-    Py_DECREF(py_retval);
-    return 1;
-}
-
-
-int _wrap_convert_py2c__int(PyObject *value, int *address)
-{
-    PyObject *py_retval;
-    
-    py_retval = Py_BuildValue((char *) "(O)", value);
-    if (!PyArg_ParseTuple(py_retval, (char *) "i", &*address)) {
-        Py_DECREF(py_retval);
-        return 0;
-    }
     Py_DECREF(py_retval);
     return 1;
 }
@@ -42825,6 +42961,25 @@ _wrap_PyNs3Node_UnregisterProtocolHandler(PyNs3Node *self, PyObject *args, PyObj
 
 
 PyObject *
+_wrap_PyNs3Node_SetCognitiveRadio(PyNs3Node *self, PyObject *args, PyObject *kwargs)
+{
+    PyObject *py_retval;
+    bool isCR;
+    PyObject *py_isCR;
+    const char *keywords[] = {"isCR", NULL};
+    
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "O", (char **) keywords, &py_isCR)) {
+        return NULL;
+    }
+    isCR = (bool) PyObject_IsTrue(py_isCR);
+    self->obj->SetCognitiveRadio(isCR);
+    Py_INCREF(Py_None);
+    py_retval = Py_None;
+    return py_retval;
+}
+
+
+PyObject *
 _wrap_PyNs3Node_ChecksumEnabled(void)
 {
     PyObject *py_retval;
@@ -42930,6 +43085,18 @@ _wrap_PyNs3Node_GetTypeId(void)
 
 
 PyObject *
+_wrap_PyNs3Node_IsCognitiveRadio(PyNs3Node *self)
+{
+    PyObject *py_retval;
+    bool retval;
+    
+    retval = self->obj->IsCognitiveRadio();
+    py_retval = Py_BuildValue((char *) "N", PyBool_FromLong(retval));
+    return py_retval;
+}
+
+
+PyObject *
 _wrap_PyNs3Node_GetNApplications(PyNs3Node *self)
 {
     PyObject *py_retval;
@@ -42964,10 +43131,12 @@ static PyMethodDef PyNs3Node_methods[] = {
     {(char *) "AddApplication", (PyCFunction) _wrap_PyNs3Node_AddApplication, METH_KEYWORDS|METH_VARARGS, NULL },
     {(char *) "GetNDevices", (PyCFunction) _wrap_PyNs3Node_GetNDevices, METH_NOARGS, NULL },
     {(char *) "UnregisterProtocolHandler", (PyCFunction) _wrap_PyNs3Node_UnregisterProtocolHandler, METH_KEYWORDS|METH_VARARGS, NULL },
+    {(char *) "SetCognitiveRadio", (PyCFunction) _wrap_PyNs3Node_SetCognitiveRadio, METH_KEYWORDS|METH_VARARGS, NULL },
     {(char *) "ChecksumEnabled", (PyCFunction) _wrap_PyNs3Node_ChecksumEnabled, METH_NOARGS|METH_STATIC, NULL },
     {(char *) "RegisterProtocolHandler", (PyCFunction) _wrap_PyNs3Node_RegisterProtocolHandler, METH_KEYWORDS|METH_VARARGS, NULL },
     {(char *) "GetDevice", (PyCFunction) _wrap_PyNs3Node_GetDevice, METH_KEYWORDS|METH_VARARGS, NULL },
     {(char *) "GetTypeId", (PyCFunction) _wrap_PyNs3Node_GetTypeId, METH_NOARGS|METH_STATIC, NULL },
+    {(char *) "IsCognitiveRadio", (PyCFunction) _wrap_PyNs3Node_IsCognitiveRadio, METH_NOARGS, NULL },
     {(char *) "GetNApplications", (PyCFunction) _wrap_PyNs3Node_GetNApplications, METH_NOARGS, NULL },
     {(char *) "NotifyConstructionCompleted", (PyCFunction) PyNs3Node__PythonHelper::_wrap_NotifyConstructionCompleted, METH_NOARGS, NULL },
     {(char *) "DoInitialize", (PyCFunction) PyNs3Node__PythonHelper::_wrap_DoInitialize, METH_NOARGS, NULL },

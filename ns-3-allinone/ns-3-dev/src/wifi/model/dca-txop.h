@@ -22,14 +22,17 @@
 #define DCA_TXOP_H
 
 #include <stdint.h>
+#include <list>
 #include "ns3/callback.h"
 #include "ns3/packet.h"
 #include "ns3/nstime.h"
 #include "ns3/object.h"
+#include "ns3/wifi-phy.h"
 #include "ns3/wifi-mac-header.h"
 #include "ns3/wifi-mode.h"
 #include "ns3/wifi-remote-station-manager.h"
 #include "ns3/dcf.h"
+#include "ns3/cognitive-packet-tags.h"
 
 namespace ns3 {
 
@@ -153,6 +156,13 @@ public:
    */
   int64_t AssignStreams (int64_t stream);
 
+    /**
+     * Restart the backoff timer if packets are queued
+     * This can be used after sensing/handoff in CR networks
+     */
+    void RestartAccessIfNeeded (void);
+
+
 
 private:
   class TransmissionListener;
@@ -161,6 +171,8 @@ private:
   class Dcf;
   friend class Dcf;
   friend class TransmissionListener;
+
+  struct ActiveChannels;
 
   DcaTxop &operator = (const DcaTxop &);
   DcaTxop (const DcaTxop &o);
@@ -198,6 +210,12 @@ private:
    * When a channel switching occurs, enqueued packets are removed.
    */
   void NotifyChannelSwitching (void);
+
+  // Two new added functions
+    void NotifyChannelSwitching (Time duration, uint16_t toChannel);
+    void NotifyChannelSensing (void);
+
+
   /**
    * When sleep operation occurs, if there is a pending packet transmission,
    * it will be reinserted to the front of the queue.
@@ -246,10 +264,15 @@ private:
    */
   void EndTxNoAck (void);
 
+  void UpdateActiveChannels (uint16_t channel);
+  uint16_t GetNextActiveChannel (void);
+
   /**
    * Restart access request if needed.
+   * void RestartAccessIfNeeded (void);
    */
-  void RestartAccessIfNeeded (void);
+
+
   /**
    * Request access from DCF manager if needed.
    */
@@ -328,6 +351,7 @@ private:
   Ptr<Packet> GetFragmentPacket (WifiMacHeader *hdr);
 
   virtual void DoDispose (void);
+  void SwitchQueueHandler (void);
 
   Dcf *m_dcf;
   DcfManager *m_manager;
@@ -339,11 +363,26 @@ private:
   Ptr<WifiRemoteStationManager> m_stationManager;
   TransmissionListener *m_transmissionListener;
   RandomStream *m_rng;
+  typedef std::list<struct ActiveChannels> ListActiveChannels;
+  typedef std::list<struct ActiveChannels>::iterator ListActiveChannelsI;
+
 
   bool m_accessOngoing;
   Ptr<const Packet> m_currentPacket;
   WifiMacHeader m_currentHdr;
   uint8_t m_fragmentNumber;
+  uint16_t m_currentChannel;
+  ListActiveChannels m_activeChannels;
+  EventId m_switchQueueTimer;
+  Time m_activeChannelTimeout;
+  Time m_queueUtilizationTime;
+
+  struct ActiveChannels
+      {
+        ActiveChannels(uint16_t channel, Time lastActive);
+        uint16_t channel;
+        Time lastActive;
+      };
 };
 
 } //namespace ns3

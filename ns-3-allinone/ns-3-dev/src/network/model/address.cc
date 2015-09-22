@@ -284,6 +284,28 @@ std::istream& operator>> (std::istream& is, Address & address)
   return is;
 }
 
+Address& operator+ (Address & address, int increment)
+{
+  uint64_t id;
+  id = (uint64_t)address.m_data[0] << 40 |
+      (uint64_t)address.m_data[1] << 32 |
+      (uint64_t)address.m_data[2] << 24 |
+      (uint64_t)address.m_data[3] << 16 |
+      (uint64_t)address.m_data[4] << 8 |
+      (uint64_t)address.m_data[5];
 
+  id=id+increment;
+  uint8_t m_address[6];
+  std::memset (m_address, 0, 6);
+
+  m_address[0] = (id >> 40) & 0xff;
+  m_address[1] = (id >> 32) & 0xff;
+  m_address[2] = (id >> 24) & 0xff;
+  m_address[3] = (id >> 16) & 0xff;
+  m_address[4] = (id >> 8) & 0xff;
+  m_address[5] = (id >> 0) & 0xff;
+  address.CopyFrom(m_address, 6);
+  return address;
+}
 
 } // namespace ns3

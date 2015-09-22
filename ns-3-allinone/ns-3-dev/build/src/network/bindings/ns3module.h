@@ -5431,6 +5431,15 @@ public:
 };
 
 
+PyObject* _wrap_convert_c2py__ns3__Address(ns3::Address *cvalue);
+
+
+int _wrap_convert_py2c__ns3__Address(PyObject *value, ns3::Address *address);
+
+
+int _wrap_convert_py2c__int(PyObject *value, int *address);
+
+
 PyObject* _wrap_convert_c2py__ns3__SequenceNumber32(ns3::SequenceNumber32 *cvalue);
 
 
@@ -5438,9 +5447,6 @@ int _wrap_convert_py2c__ns3__SequenceNumber32(PyObject *value, ns3::SequenceNumb
 
 
 int _wrap_convert_py2c__ns3__SequenceNumber__lt___unsigned_int__int___gt__(PyObject *value, ns3::SequenceNumber< unsigned int, int > *address);
-
-
-int _wrap_convert_py2c__int(PyObject *value, int *address);
 
 
 PyObject* _wrap_convert_c2py__ns3__SequenceNumber16(ns3::SequenceNumber16 *cvalue);

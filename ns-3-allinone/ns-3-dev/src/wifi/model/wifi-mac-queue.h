@@ -28,6 +28,7 @@
 #include "ns3/packet.h"
 #include "ns3/nstime.h"
 #include "ns3/object.h"
+#include "ns3/cognitive-packet-tags.h"
 #include "wifi-mac-header.h"
 
 namespace ns3 {
@@ -102,6 +103,9 @@ public:
    * \return the packet
    */
   Ptr<const Packet> Dequeue (WifiMacHeader *hdr);
+
+  Ptr<const Packet> DequeueForChannel (WifiMacHeader *hdr, uint16_t channel);
+
   /**
    * Peek the packet in the front of the queue. The packet is not removed.
    *
@@ -210,6 +214,8 @@ public:
    * \return true if the queue is empty, false otherwise
    */
   bool IsEmpty (void);
+
+  bool IsEmpty (uint16_t channel);
   /**
    * Return the current queue size.
    *
@@ -240,9 +246,13 @@ protected:
     Item (Ptr<const Packet> packet,
           const WifiMacHeader &hdr,
           Time tstamp);
+    Item (Ptr<const Packet> packet,
+          const WifiMacHeader &hdr,
+          Time tstamp, uint16_t channel);
     Ptr<const Packet> packet; //!< Actual packet
     WifiMacHeader hdr;        //!< Wifi MAC header associated with the packet
     Time tstamp;              //!< timestamp when the packet arrived at the queue
+    uint16_t channel;
   };
 
   /**

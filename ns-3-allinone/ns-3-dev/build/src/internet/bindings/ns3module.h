@@ -275,6 +275,46 @@ extern std::map<void*, PyObject*> *_PyNs3CallbackBase_wrapper_registry;
 
 typedef struct {
     PyObject_HEAD
+    ns3::CommandLine *obj;
+    PyObject *inst_dict;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3CommandLine;
+
+
+extern PyTypeObject *_PyNs3CommandLine_Type;
+#define PyNs3CommandLine_Type (*_PyNs3CommandLine_Type)
+
+extern std::map<void*, PyObject*> *_PyNs3CommandLine_wrapper_registry;
+#define PyNs3CommandLine_wrapper_registry (*_PyNs3CommandLine_wrapper_registry)
+
+typedef struct {
+    PyObject_HEAD
+    ns3::CriticalSection *obj;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3CriticalSection;
+
+
+extern PyTypeObject *_PyNs3CriticalSection_Type;
+#define PyNs3CriticalSection_Type (*_PyNs3CriticalSection_Type)
+
+extern std::map<void*, PyObject*> *_PyNs3CriticalSection_wrapper_registry;
+#define PyNs3CriticalSection_wrapper_registry (*_PyNs3CriticalSection_wrapper_registry)
+
+typedef struct {
+    PyObject_HEAD
+    ns3::EventGarbageCollector *obj;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3EventGarbageCollector;
+
+
+extern PyTypeObject *_PyNs3EventGarbageCollector_Type;
+#define PyNs3EventGarbageCollector_Type (*_PyNs3EventGarbageCollector_Type)
+
+extern std::map<void*, PyObject*> *_PyNs3EventGarbageCollector_wrapper_registry;
+#define PyNs3EventGarbageCollector_wrapper_registry (*_PyNs3EventGarbageCollector_wrapper_registry)
+
+typedef struct {
+    PyObject_HEAD
     ns3::EventId *obj;
     PyBindGenWrapperFlags flags:8;
 } PyNs3EventId;
@@ -285,6 +325,19 @@ extern PyTypeObject *_PyNs3EventId_Type;
 
 extern std::map<void*, PyObject*> *_PyNs3EventId_wrapper_registry;
 #define PyNs3EventId_wrapper_registry (*_PyNs3EventId_wrapper_registry)
+
+typedef struct {
+    PyObject_HEAD
+    ns3::GlobalValue *obj;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3GlobalValue;
+
+
+extern PyTypeObject *_PyNs3GlobalValue_Type;
+#define PyNs3GlobalValue_Type (*_PyNs3GlobalValue_Type)
+
+extern std::map<void*, PyObject*> *_PyNs3GlobalValue_wrapper_registry;
+#define PyNs3GlobalValue_wrapper_registry (*_PyNs3GlobalValue_wrapper_registry)
 
 typedef struct {
     PyObject_HEAD
@@ -470,6 +523,19 @@ extern std::map<void*, PyObject*> *_PyNs3Ipv6Prefix_wrapper_registry;
 
 typedef struct {
     PyObject_HEAD
+    ns3::LogComponent *obj;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3LogComponent;
+
+
+extern PyTypeObject *_PyNs3LogComponent_Type;
+#define PyNs3LogComponent_Type (*_PyNs3LogComponent_Type)
+
+extern std::map<void*, PyObject*> *_PyNs3LogComponent_wrapper_registry;
+#define PyNs3LogComponent_wrapper_registry (*_PyNs3LogComponent_wrapper_registry)
+
+typedef struct {
+    PyObject_HEAD
     ns3::Mac48Address *obj;
     PyBindGenWrapperFlags flags:8;
 } PyNs3Mac48Address;
@@ -480,6 +546,19 @@ extern PyTypeObject *_PyNs3Mac48Address_Type;
 
 extern std::map<void*, PyObject*> *_PyNs3Mac48Address_wrapper_registry;
 #define PyNs3Mac48Address_wrapper_registry (*_PyNs3Mac48Address_wrapper_registry)
+
+typedef struct {
+    PyObject_HEAD
+    ns3::Names *obj;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3Names;
+
+
+extern PyTypeObject *_PyNs3Names_Type;
+#define PyNs3Names_Type (*_PyNs3Names_Type)
+
+extern std::map<void*, PyObject*> *_PyNs3Names_wrapper_registry;
+#define PyNs3Names_wrapper_registry (*_PyNs3Names_wrapper_registry)
 
 typedef struct {
     PyObject_HEAD
@@ -506,6 +585,19 @@ extern PyTypeObject *_PyNs3NodeContainer_Type;
 
 extern std::map<void*, PyObject*> *_PyNs3NodeContainer_wrapper_registry;
 #define PyNs3NodeContainer_wrapper_registry (*_PyNs3NodeContainer_wrapper_registry)
+
+typedef struct {
+    PyObject_HEAD
+    ns3::NonCopyable *obj;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3NonCopyable;
+
+
+extern PyTypeObject *_PyNs3NonCopyable_Type;
+#define PyNs3NonCopyable_Type (*_PyNs3NonCopyable_Type)
+
+extern std::map<void*, PyObject*> *_PyNs3NonCopyable_wrapper_registry;
+#define PyNs3NonCopyable_wrapper_registry (*_PyNs3NonCopyable_wrapper_registry)
 
 typedef struct {
     PyObject_HEAD
@@ -659,6 +751,19 @@ extern std::map<void*, PyObject*> *_PyNs3PacketTagListTagData_wrapper_registry;
 
 typedef struct {
     PyObject_HEAD
+    ns3::ParameterLogger *obj;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3ParameterLogger;
+
+
+extern PyTypeObject *_PyNs3ParameterLogger_Type;
+#define PyNs3ParameterLogger_Type (*_PyNs3ParameterLogger_Type)
+
+extern std::map<void*, PyObject*> *_PyNs3ParameterLogger_wrapper_registry;
+#define PyNs3ParameterLogger_wrapper_registry (*_PyNs3ParameterLogger_wrapper_registry)
+
+typedef struct {
+    PyObject_HEAD
     ns3::PcapFile *obj;
     PyBindGenWrapperFlags flags:8;
 } PyNs3PcapFile;
@@ -715,6 +820,71 @@ public:
 
 extern std::map<void*, PyObject*> *_PyNs3PcapHelperForDevice_wrapper_registry;
 #define PyNs3PcapHelperForDevice_wrapper_registry (*_PyNs3PcapHelperForDevice_wrapper_registry)
+
+typedef struct {
+    PyObject_HEAD
+    ns3::RandomVariableStreamHelper *obj;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3RandomVariableStreamHelper;
+
+
+extern PyTypeObject *_PyNs3RandomVariableStreamHelper_Type;
+#define PyNs3RandomVariableStreamHelper_Type (*_PyNs3RandomVariableStreamHelper_Type)
+
+extern std::map<void*, PyObject*> *_PyNs3RandomVariableStreamHelper_wrapper_registry;
+#define PyNs3RandomVariableStreamHelper_wrapper_registry (*_PyNs3RandomVariableStreamHelper_wrapper_registry)
+
+typedef struct {
+    PyObject_HEAD
+    ns3::RepositoryEntryRecv *obj;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3RepositoryEntryRecv;
+
+
+extern PyTypeObject *_PyNs3RepositoryEntryRecv_Type;
+#define PyNs3RepositoryEntryRecv_Type (*_PyNs3RepositoryEntryRecv_Type)
+
+extern std::map<void*, PyObject*> *_PyNs3RepositoryEntryRecv_wrapper_registry;
+#define PyNs3RepositoryEntryRecv_wrapper_registry (*_PyNs3RepositoryEntryRecv_wrapper_registry)
+
+typedef struct {
+    PyObject_HEAD
+    ns3::RepositoryEntrySend *obj;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3RepositoryEntrySend;
+
+
+extern PyTypeObject *_PyNs3RepositoryEntrySend_Type;
+#define PyNs3RepositoryEntrySend_Type (*_PyNs3RepositoryEntrySend_Type)
+
+extern std::map<void*, PyObject*> *_PyNs3RepositoryEntrySend_wrapper_registry;
+#define PyNs3RepositoryEntrySend_wrapper_registry (*_PyNs3RepositoryEntrySend_wrapper_registry)
+
+typedef struct {
+    PyObject_HEAD
+    ns3::RngSeedManager *obj;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3RngSeedManager;
+
+
+extern PyTypeObject *_PyNs3RngSeedManager_Type;
+#define PyNs3RngSeedManager_Type (*_PyNs3RngSeedManager_Type)
+
+extern std::map<void*, PyObject*> *_PyNs3RngSeedManager_wrapper_registry;
+#define PyNs3RngSeedManager_wrapper_registry (*_PyNs3RngSeedManager_wrapper_registry)
+
+typedef struct {
+    PyObject_HEAD
+    ns3::RngStream *obj;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3RngStream;
+
+
+extern PyTypeObject *_PyNs3RngStream_Type;
+#define PyNs3RngStream_Type (*_PyNs3RngStream_Type)
+
+extern std::map<void*, PyObject*> *_PyNs3RngStream_wrapper_registry;
+#define PyNs3RngStream_wrapper_registry (*_PyNs3RngStream_wrapper_registry)
 
 typedef struct {
     PyObject_HEAD
@@ -838,6 +1008,45 @@ extern PyTypeObject *_PyNs3Simulator_Type;
 
 extern std::map<void*, PyObject*> *_PyNs3Simulator_wrapper_registry;
 #define PyNs3Simulator_wrapper_registry (*_PyNs3Simulator_wrapper_registry)
+
+typedef struct {
+    PyObject_HEAD
+    ns3::SystemCondition *obj;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3SystemCondition;
+
+
+extern PyTypeObject *_PyNs3SystemCondition_Type;
+#define PyNs3SystemCondition_Type (*_PyNs3SystemCondition_Type)
+
+extern std::map<void*, PyObject*> *_PyNs3SystemCondition_wrapper_registry;
+#define PyNs3SystemCondition_wrapper_registry (*_PyNs3SystemCondition_wrapper_registry)
+
+typedef struct {
+    PyObject_HEAD
+    ns3::SystemMutex *obj;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3SystemMutex;
+
+
+extern PyTypeObject *_PyNs3SystemMutex_Type;
+#define PyNs3SystemMutex_Type (*_PyNs3SystemMutex_Type)
+
+extern std::map<void*, PyObject*> *_PyNs3SystemMutex_wrapper_registry;
+#define PyNs3SystemMutex_wrapper_registry (*_PyNs3SystemMutex_wrapper_registry)
+
+typedef struct {
+    PyObject_HEAD
+    ns3::SystemWallClockMs *obj;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3SystemWallClockMs;
+
+
+extern PyTypeObject *_PyNs3SystemWallClockMs_Type;
+#define PyNs3SystemWallClockMs_Type (*_PyNs3SystemWallClockMs_Type)
+
+extern std::map<void*, PyObject*> *_PyNs3SystemWallClockMs_wrapper_registry;
+#define PyNs3SystemWallClockMs_wrapper_registry (*_PyNs3SystemWallClockMs_wrapper_registry)
 
 typedef struct {
     PyObject_HEAD
@@ -1016,6 +1225,45 @@ extern std::map<void*, PyObject*> *_PyNs3TypeIdTraceSourceInformation_wrapper_re
 
 typedef struct {
     PyObject_HEAD
+    ns3::Vector2D *obj;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3Vector2D;
+
+
+extern PyTypeObject *_PyNs3Vector2D_Type;
+#define PyNs3Vector2D_Type (*_PyNs3Vector2D_Type)
+
+extern std::map<void*, PyObject*> *_PyNs3Vector2D_wrapper_registry;
+#define PyNs3Vector2D_wrapper_registry (*_PyNs3Vector2D_wrapper_registry)
+
+typedef struct {
+    PyObject_HEAD
+    ns3::Vector3D *obj;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3Vector3D;
+
+
+extern PyTypeObject *_PyNs3Vector3D_Type;
+#define PyNs3Vector3D_Type (*_PyNs3Vector3D_Type)
+
+extern std::map<void*, PyObject*> *_PyNs3Vector3D_wrapper_registry;
+#define PyNs3Vector3D_wrapper_registry (*_PyNs3Vector3D_wrapper_registry)
+
+typedef struct {
+    PyObject_HEAD
+    ns3::Watchdog *obj;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3Watchdog;
+
+
+extern PyTypeObject *_PyNs3Watchdog_Type;
+#define PyNs3Watchdog_Type (*_PyNs3Watchdog_Type)
+
+extern std::map<void*, PyObject*> *_PyNs3Watchdog_wrapper_registry;
+#define PyNs3Watchdog_wrapper_registry (*_PyNs3Watchdog_wrapper_registry)
+
+typedef struct {
+    PyObject_HEAD
     ns3::empty *obj;
     PyBindGenWrapperFlags flags:8;
 } PyNs3Empty;
@@ -1039,6 +1287,18 @@ extern PyTypeObject *_PyNs3Int64x64_t_Type;
 
 extern std::map<void*, PyObject*> *_PyNs3Int64x64_t_wrapper_registry;
 #define PyNs3Int64x64_t_wrapper_registry (*_PyNs3Int64x64_t_wrapper_registry)
+
+typedef struct {
+    PyObject_HEAD
+    ns3::AodvHelper *obj;
+    PyObject *inst_dict;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3AodvHelper;
+
+
+extern PyTypeObject *_PyNs3AodvHelper_Type;
+#define PyNs3AodvHelper_Type (*_PyNs3AodvHelper_Type)
+
 
 typedef struct {
     PyObject_HEAD
@@ -1107,6 +1367,30 @@ extern PyTypeObject *_PyNs3ObjectAggregateIterator_Type;
 
 extern std::map<void*, PyObject*> *_PyNs3ObjectAggregateIterator_wrapper_registry;
 #define PyNs3ObjectAggregateIterator_wrapper_registry (*_PyNs3ObjectAggregateIterator_wrapper_registry)
+
+typedef struct {
+    PyObject_HEAD
+    ns3::PacketChannelPacketTag *obj;
+    PyObject *inst_dict;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3PacketChannelPacketTag;
+
+
+extern PyTypeObject *_PyNs3PacketChannelPacketTag_Type;
+#define PyNs3PacketChannelPacketTag_Type (*_PyNs3PacketChannelPacketTag_Type)
+
+
+typedef struct {
+    PyObject_HEAD
+    ns3::PacketTypePacketTag *obj;
+    PyObject *inst_dict;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3PacketTypePacketTag;
+
+
+extern PyTypeObject *_PyNs3PacketTypePacketTag_Type;
+#define PyNs3PacketTypePacketTag_Type (*_PyNs3PacketTypePacketTag_Type)
+
 
 typedef struct {
     PyObject_HEAD
@@ -1181,6 +1465,75 @@ public:
 
 };
 
+
+typedef struct {
+    PyObject_HEAD
+    ns3::Repository *obj;
+    PyObject *inst_dict;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3Repository;
+
+
+extern PyTypeObject *_PyNs3Repository_Type;
+#define PyNs3Repository_Type (*_PyNs3Repository_Type)
+
+
+typedef struct {
+    PyObject_HEAD
+    ns3::Scheduler *obj;
+    PyObject *inst_dict;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3Scheduler;
+
+
+extern PyTypeObject *_PyNs3Scheduler_Type;
+#define PyNs3Scheduler_Type (*_PyNs3Scheduler_Type)
+
+class PyNs3Scheduler__PythonHelper : public ns3::Scheduler
+{
+public:
+    PyObject *m_pyself;
+
+    void set_pyobj(PyObject *pyobj)
+    {
+        Py_XDECREF(m_pyself);
+        Py_INCREF(pyobj);
+        m_pyself = pyobj;
+    }
+
+    virtual ~PyNs3Scheduler__PythonHelper()
+    {
+        Py_CLEAR(m_pyself);
+    }
+
+};
+
+
+typedef struct {
+    PyObject_HEAD
+    ns3::Scheduler::Event *obj;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3SchedulerEvent;
+
+
+extern PyTypeObject *_PyNs3SchedulerEvent_Type;
+#define PyNs3SchedulerEvent_Type (*_PyNs3SchedulerEvent_Type)
+
+extern std::map<void*, PyObject*> *_PyNs3SchedulerEvent_wrapper_registry;
+#define PyNs3SchedulerEvent_wrapper_registry (*_PyNs3SchedulerEvent_wrapper_registry)
+
+typedef struct {
+    PyObject_HEAD
+    ns3::Scheduler::EventKey *obj;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3SchedulerEventKey;
+
+
+extern PyTypeObject *_PyNs3SchedulerEventKey_Type;
+#define PyNs3SchedulerEventKey_Type (*_PyNs3SchedulerEventKey_Type)
+
+extern std::map<void*, PyObject*> *_PyNs3SchedulerEventKey_wrapper_registry;
+#define PyNs3SchedulerEventKey_wrapper_registry (*_PyNs3SchedulerEventKey_wrapper_registry)
 
 typedef struct {
     PyObject_HEAD
@@ -1295,6 +1648,22 @@ extern pybindgen::TypeMap *_PyNs3SimpleRefCount__Ns3EventImpl_Ns3Empty_Ns3Defaul
 
 typedef struct {
     PyObject_HEAD
+    ns3::SimpleRefCount< ns3::FdReader, ns3::empty, ns3::DefaultDeleter<ns3::FdReader> > *obj;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3SimpleRefCount__Ns3FdReader_Ns3Empty_Ns3DefaultDeleter__lt__ns3FdReader__gt__;
+
+
+extern PyTypeObject *_PyNs3SimpleRefCount__Ns3FdReader_Ns3Empty_Ns3DefaultDeleter__lt__ns3FdReader__gt___Type;
+#define PyNs3SimpleRefCount__Ns3FdReader_Ns3Empty_Ns3DefaultDeleter__lt__ns3FdReader__gt___Type (*_PyNs3SimpleRefCount__Ns3FdReader_Ns3Empty_Ns3DefaultDeleter__lt__ns3FdReader__gt___Type)
+
+
+extern pybindgen::TypeMap *_PyNs3SimpleRefCount__Ns3FdReader_Ns3Empty_Ns3DefaultDeleter__lt__ns3FdReader__gt____typeid_map;
+
+#define PyNs3SimpleRefCount__Ns3FdReader_Ns3Empty_Ns3DefaultDeleter__lt__ns3FdReader__gt____typeid_map (*_PyNs3SimpleRefCount__Ns3FdReader_Ns3Empty_Ns3DefaultDeleter__lt__ns3FdReader__gt____typeid_map)
+
+
+typedef struct {
+    PyObject_HEAD
     ns3::SimpleRefCount< ns3::Hash::Implementation, ns3::empty, ns3::DefaultDeleter<ns3::Hash::Implementation> > *obj;
     PyBindGenWrapperFlags flags:8;
 } PyNs3SimpleRefCount__Ns3HashImplementation_Ns3Empty_Ns3DefaultDeleter__lt__ns3HashImplementation__gt__;
@@ -1359,6 +1728,38 @@ extern pybindgen::TypeMap *_PyNs3SimpleRefCount__Ns3Packet_Ns3Empty_Ns3DefaultDe
 
 typedef struct {
     PyObject_HEAD
+    ns3::SimpleRefCount< ns3::RefCountBase, ns3::empty, ns3::DefaultDeleter<ns3::RefCountBase> > *obj;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3SimpleRefCount__Ns3RefCountBase_Ns3Empty_Ns3DefaultDeleter__lt__ns3RefCountBase__gt__;
+
+
+extern PyTypeObject *_PyNs3SimpleRefCount__Ns3RefCountBase_Ns3Empty_Ns3DefaultDeleter__lt__ns3RefCountBase__gt___Type;
+#define PyNs3SimpleRefCount__Ns3RefCountBase_Ns3Empty_Ns3DefaultDeleter__lt__ns3RefCountBase__gt___Type (*_PyNs3SimpleRefCount__Ns3RefCountBase_Ns3Empty_Ns3DefaultDeleter__lt__ns3RefCountBase__gt___Type)
+
+
+extern pybindgen::TypeMap *_PyNs3SimpleRefCount__Ns3RefCountBase_Ns3Empty_Ns3DefaultDeleter__lt__ns3RefCountBase__gt____typeid_map;
+
+#define PyNs3SimpleRefCount__Ns3RefCountBase_Ns3Empty_Ns3DefaultDeleter__lt__ns3RefCountBase__gt____typeid_map (*_PyNs3SimpleRefCount__Ns3RefCountBase_Ns3Empty_Ns3DefaultDeleter__lt__ns3RefCountBase__gt____typeid_map)
+
+
+typedef struct {
+    PyObject_HEAD
+    ns3::SimpleRefCount< ns3::SystemThread, ns3::empty, ns3::DefaultDeleter<ns3::SystemThread> > *obj;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3SimpleRefCount__Ns3SystemThread_Ns3Empty_Ns3DefaultDeleter__lt__ns3SystemThread__gt__;
+
+
+extern PyTypeObject *_PyNs3SimpleRefCount__Ns3SystemThread_Ns3Empty_Ns3DefaultDeleter__lt__ns3SystemThread__gt___Type;
+#define PyNs3SimpleRefCount__Ns3SystemThread_Ns3Empty_Ns3DefaultDeleter__lt__ns3SystemThread__gt___Type (*_PyNs3SimpleRefCount__Ns3SystemThread_Ns3Empty_Ns3DefaultDeleter__lt__ns3SystemThread__gt___Type)
+
+
+extern pybindgen::TypeMap *_PyNs3SimpleRefCount__Ns3SystemThread_Ns3Empty_Ns3DefaultDeleter__lt__ns3SystemThread__gt____typeid_map;
+
+#define PyNs3SimpleRefCount__Ns3SystemThread_Ns3Empty_Ns3DefaultDeleter__lt__ns3SystemThread__gt____typeid_map (*_PyNs3SimpleRefCount__Ns3SystemThread_Ns3Empty_Ns3DefaultDeleter__lt__ns3SystemThread__gt____typeid_map)
+
+
+typedef struct {
+    PyObject_HEAD
     ns3::SimpleRefCount< ns3::TraceSourceAccessor, ns3::empty, ns3::DefaultDeleter<ns3::TraceSourceAccessor> > *obj;
     PyBindGenWrapperFlags flags:8;
 } PyNs3SimpleRefCount__Ns3TraceSourceAccessor_Ns3Empty_Ns3DefaultDeleter__lt__ns3TraceSourceAccessor__gt__;
@@ -1371,6 +1772,18 @@ extern PyTypeObject *_PyNs3SimpleRefCount__Ns3TraceSourceAccessor_Ns3Empty_Ns3De
 extern pybindgen::TypeMap *_PyNs3SimpleRefCount__Ns3TraceSourceAccessor_Ns3Empty_Ns3DefaultDeleter__lt__ns3TraceSourceAccessor__gt____typeid_map;
 
 #define PyNs3SimpleRefCount__Ns3TraceSourceAccessor_Ns3Empty_Ns3DefaultDeleter__lt__ns3TraceSourceAccessor__gt____typeid_map (*_PyNs3SimpleRefCount__Ns3TraceSourceAccessor_Ns3Empty_Ns3DefaultDeleter__lt__ns3TraceSourceAccessor__gt____typeid_map)
+
+
+typedef struct {
+    PyObject_HEAD
+    ns3::SimulatorImpl *obj;
+    PyObject *inst_dict;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3SimulatorImpl;
+
+
+extern PyTypeObject *_PyNs3SimulatorImpl_Type;
+#define PyNs3SimulatorImpl_Type (*_PyNs3SimulatorImpl_Type)
 
 
 typedef struct {
@@ -1509,6 +1922,48 @@ extern PyTypeObject *_PyNs3SocketSetDontFragmentTag_Type;
 
 typedef struct {
     PyObject_HEAD
+    ns3::Synchronizer *obj;
+    PyObject *inst_dict;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3Synchronizer;
+
+
+extern PyTypeObject *_PyNs3Synchronizer_Type;
+#define PyNs3Synchronizer_Type (*_PyNs3Synchronizer_Type)
+
+class PyNs3Synchronizer__PythonHelper : public ns3::Synchronizer
+{
+public:
+    PyObject *m_pyself;
+
+    void set_pyobj(PyObject *pyobj)
+    {
+        Py_XDECREF(m_pyself);
+        Py_INCREF(pyobj);
+        m_pyself = pyobj;
+    }
+
+    virtual ~PyNs3Synchronizer__PythonHelper()
+    {
+        Py_CLEAR(m_pyself);
+    }
+
+};
+
+
+typedef struct {
+    PyObject_HEAD
+    ns3::SystemThread *obj;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3SystemThread;
+
+
+extern PyTypeObject *_PyNs3SystemThread_Type;
+#define PyNs3SystemThread_Type (*_PyNs3SystemThread_Type)
+
+
+typedef struct {
+    PyObject_HEAD
     ns3::Time *obj;
     PyBindGenWrapperFlags flags:8;
 } PyNs3Time;
@@ -1620,6 +2075,37 @@ public:
 
 typedef struct {
     PyObject_HEAD
+    ns3::WallClockSynchronizer *obj;
+    PyObject *inst_dict;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3WallClockSynchronizer;
+
+
+extern PyTypeObject *_PyNs3WallClockSynchronizer_Type;
+#define PyNs3WallClockSynchronizer_Type (*_PyNs3WallClockSynchronizer_Type)
+
+class PyNs3WallClockSynchronizer__PythonHelper : public ns3::WallClockSynchronizer
+{
+public:
+    PyObject *m_pyself;
+
+    void set_pyobj(PyObject *pyobj)
+    {
+        Py_XDECREF(m_pyself);
+        Py_INCREF(pyobj);
+        m_pyself = pyobj;
+    }
+
+    virtual ~PyNs3WallClockSynchronizer__PythonHelper()
+    {
+        Py_CLEAR(m_pyself);
+    }
+
+};
+
+
+typedef struct {
+    PyObject_HEAD
     ns3::WeibullRandomVariable *obj;
     PyObject *inst_dict;
     PyBindGenWrapperFlags flags:8;
@@ -1647,6 +2133,18 @@ public:
     }
 
 };
+
+
+typedef struct {
+    PyObject_HEAD
+    ns3::WifiMacHeader *obj;
+    PyObject *inst_dict;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3WifiMacHeader;
+
+
+extern PyTypeObject *_PyNs3WifiMacHeader_Type;
+#define PyNs3WifiMacHeader_Type (*_PyNs3WifiMacHeader_Type)
 
 
 typedef struct {
@@ -1764,6 +2262,37 @@ typedef struct {
 
 extern PyTypeObject *_PyNs3BooleanValue_Type;
 #define PyNs3BooleanValue_Type (*_PyNs3BooleanValue_Type)
+
+
+typedef struct {
+    PyObject_HEAD
+    ns3::CalendarScheduler *obj;
+    PyObject *inst_dict;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3CalendarScheduler;
+
+
+extern PyTypeObject *_PyNs3CalendarScheduler_Type;
+#define PyNs3CalendarScheduler_Type (*_PyNs3CalendarScheduler_Type)
+
+class PyNs3CalendarScheduler__PythonHelper : public ns3::CalendarScheduler
+{
+public:
+    PyObject *m_pyself;
+
+    void set_pyobj(PyObject *pyobj)
+    {
+        Py_XDECREF(m_pyself);
+        Py_INCREF(pyobj);
+        m_pyself = pyobj;
+    }
+
+    virtual ~PyNs3CalendarScheduler__PythonHelper()
+    {
+        Py_CLEAR(m_pyself);
+    }
+
+};
 
 
 typedef struct {
@@ -1890,6 +2419,18 @@ public:
     }
 
 };
+
+
+typedef struct {
+    PyObject_HEAD
+    ns3::DefaultSimulatorImpl *obj;
+    PyObject *inst_dict;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3DefaultSimulatorImpl;
+
+
+extern PyTypeObject *_PyNs3DefaultSimulatorImpl_Type;
+#define PyNs3DefaultSimulatorImpl_Type (*_PyNs3DefaultSimulatorImpl_Type)
 
 
 typedef struct {
@@ -2073,6 +2614,17 @@ public:
 
 typedef struct {
     PyObject_HEAD
+    ns3::FdReader *obj;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3FdReader;
+
+
+extern PyTypeObject *_PyNs3FdReader_Type;
+#define PyNs3FdReader_Type (*_PyNs3FdReader_Type)
+
+
+typedef struct {
+    PyObject_HEAD
     ns3::GammaRandomVariable *obj;
     PyObject *inst_dict;
     PyBindGenWrapperFlags flags:8;
@@ -2095,6 +2647,37 @@ public:
     }
 
     virtual ~PyNs3GammaRandomVariable__PythonHelper()
+    {
+        Py_CLEAR(m_pyself);
+    }
+
+};
+
+
+typedef struct {
+    PyObject_HEAD
+    ns3::HeapScheduler *obj;
+    PyObject *inst_dict;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3HeapScheduler;
+
+
+extern PyTypeObject *_PyNs3HeapScheduler_Type;
+#define PyNs3HeapScheduler_Type (*_PyNs3HeapScheduler_Type)
+
+class PyNs3HeapScheduler__PythonHelper : public ns3::HeapScheduler
+{
+public:
+    PyObject *m_pyself;
+
+    void set_pyobj(PyObject *pyobj)
+    {
+        Py_XDECREF(m_pyself);
+        Py_INCREF(pyobj);
+        m_pyself = pyobj;
+    }
+
+    virtual ~PyNs3HeapScheduler__PythonHelper()
     {
         Py_CLEAR(m_pyself);
     }
@@ -2203,6 +2786,37 @@ extern PyTypeObject *_PyNs3Ipv6PrefixValue_Type;
 
 typedef struct {
     PyObject_HEAD
+    ns3::ListScheduler *obj;
+    PyObject *inst_dict;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3ListScheduler;
+
+
+extern PyTypeObject *_PyNs3ListScheduler_Type;
+#define PyNs3ListScheduler_Type (*_PyNs3ListScheduler_Type)
+
+class PyNs3ListScheduler__PythonHelper : public ns3::ListScheduler
+{
+public:
+    PyObject *m_pyself;
+
+    void set_pyobj(PyObject *pyobj)
+    {
+        Py_XDECREF(m_pyself);
+        Py_INCREF(pyobj);
+        m_pyself = pyobj;
+    }
+
+    virtual ~PyNs3ListScheduler__PythonHelper()
+    {
+        Py_CLEAR(m_pyself);
+    }
+
+};
+
+
+typedef struct {
+    PyObject_HEAD
     ns3::LogNormalRandomVariable *obj;
     PyObject *inst_dict;
     PyBindGenWrapperFlags flags:8;
@@ -2256,6 +2870,37 @@ extern PyTypeObject *_PyNs3Mac48AddressValue_Type;
 
 typedef struct {
     PyObject_HEAD
+    ns3::MapScheduler *obj;
+    PyObject *inst_dict;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3MapScheduler;
+
+
+extern PyTypeObject *_PyNs3MapScheduler_Type;
+#define PyNs3MapScheduler_Type (*_PyNs3MapScheduler_Type)
+
+class PyNs3MapScheduler__PythonHelper : public ns3::MapScheduler
+{
+public:
+    PyObject *m_pyself;
+
+    void set_pyobj(PyObject *pyobj)
+    {
+        Py_XDECREF(m_pyself);
+        Py_INCREF(pyobj);
+        m_pyself = pyobj;
+    }
+
+    virtual ~PyNs3MapScheduler__PythonHelper()
+    {
+        Py_CLEAR(m_pyself);
+    }
+
+};
+
+
+typedef struct {
+    PyObject_HEAD
     ns3::NetDevice *obj;
     PyObject *inst_dict;
     PyBindGenWrapperFlags flags:8;
@@ -2264,6 +2909,25 @@ typedef struct {
 
 extern PyTypeObject *_PyNs3NetDevice_Type;
 #define PyNs3NetDevice_Type (*_PyNs3NetDevice_Type)
+
+class PyNs3NetDevice__PythonHelper : public ns3::NetDevice
+{
+public:
+    PyObject *m_pyself;
+
+    void set_pyobj(PyObject *pyobj)
+    {
+        Py_XDECREF(m_pyself);
+        Py_INCREF(pyobj);
+        m_pyself = pyobj;
+    }
+
+    virtual ~PyNs3NetDevice__PythonHelper()
+    {
+        Py_CLEAR(m_pyself);
+    }
+
+};
 
 
 typedef struct {
@@ -2363,6 +3027,39 @@ extern PyTypeObject *_PyNs3ObjectFactoryValue_Type;
 
 typedef struct {
     PyObject_HEAD
+    ns3::ObjectPtrContainerAccessor *obj;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3ObjectPtrContainerAccessor;
+
+
+extern PyTypeObject *_PyNs3ObjectPtrContainerAccessor_Type;
+#define PyNs3ObjectPtrContainerAccessor_Type (*_PyNs3ObjectPtrContainerAccessor_Type)
+
+
+typedef struct {
+    PyObject_HEAD
+    ns3::ObjectPtrContainerChecker *obj;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3ObjectPtrContainerChecker;
+
+
+extern PyTypeObject *_PyNs3ObjectPtrContainerChecker_Type;
+#define PyNs3ObjectPtrContainerChecker_Type (*_PyNs3ObjectPtrContainerChecker_Type)
+
+
+typedef struct {
+    PyObject_HEAD
+    ns3::ObjectPtrContainerValue *obj;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3ObjectPtrContainerValue;
+
+
+extern PyTypeObject *_PyNs3ObjectPtrContainerValue_Type;
+#define PyNs3ObjectPtrContainerValue_Type (*_PyNs3ObjectPtrContainerValue_Type)
+
+
+typedef struct {
+    PyObject_HEAD
     ns3::OutputStreamWrapper *obj;
     PyBindGenWrapperFlags flags:8;
 } PyNs3OutputStreamWrapper;
@@ -2416,6 +3113,28 @@ public:
 
 typedef struct {
     PyObject_HEAD
+    ns3::PointerChecker *obj;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3PointerChecker;
+
+
+extern PyTypeObject *_PyNs3PointerChecker_Type;
+#define PyNs3PointerChecker_Type (*_PyNs3PointerChecker_Type)
+
+
+typedef struct {
+    PyObject_HEAD
+    ns3::PointerValue *obj;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3PointerValue;
+
+
+extern PyTypeObject *_PyNs3PointerValue_Type;
+#define PyNs3PointerValue_Type (*_PyNs3PointerValue_Type)
+
+
+typedef struct {
+    PyObject_HEAD
     ns3::Probe *obj;
     PyObject *inst_dict;
     PyBindGenWrapperFlags flags:8;
@@ -2443,6 +3162,29 @@ public:
     }
 
 };
+
+
+typedef struct {
+    PyObject_HEAD
+    ns3::RealtimeSimulatorImpl *obj;
+    PyObject *inst_dict;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3RealtimeSimulatorImpl;
+
+
+extern PyTypeObject *_PyNs3RealtimeSimulatorImpl_Type;
+#define PyNs3RealtimeSimulatorImpl_Type (*_PyNs3RealtimeSimulatorImpl_Type)
+
+
+typedef struct {
+    PyObject_HEAD
+    ns3::RefCountBase *obj;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3RefCountBase;
+
+
+extern PyTypeObject *_PyNs3RefCountBase_Type;
+#define PyNs3RefCountBase_Type (*_PyNs3RefCountBase_Type)
 
 
 typedef struct {
@@ -2513,6 +3255,50 @@ extern PyTypeObject *_PyNs3UintegerValue_Type;
 
 typedef struct {
     PyObject_HEAD
+    ns3::Vector2DChecker *obj;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3Vector2DChecker;
+
+
+extern PyTypeObject *_PyNs3Vector2DChecker_Type;
+#define PyNs3Vector2DChecker_Type (*_PyNs3Vector2DChecker_Type)
+
+
+typedef struct {
+    PyObject_HEAD
+    ns3::Vector2DValue *obj;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3Vector2DValue;
+
+
+extern PyTypeObject *_PyNs3Vector2DValue_Type;
+#define PyNs3Vector2DValue_Type (*_PyNs3Vector2DValue_Type)
+
+
+typedef struct {
+    PyObject_HEAD
+    ns3::Vector3DChecker *obj;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3Vector3DChecker;
+
+
+extern PyTypeObject *_PyNs3Vector3DChecker_Type;
+#define PyNs3Vector3DChecker_Type (*_PyNs3Vector3DChecker_Type)
+
+
+typedef struct {
+    PyObject_HEAD
+    ns3::Vector3DValue *obj;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3Vector3DValue;
+
+
+extern PyTypeObject *_PyNs3Vector3DValue_Type;
+#define PyNs3Vector3DValue_Type (*_PyNs3Vector3DValue_Type)
+
+
+typedef struct {
+    PyObject_HEAD
     ns3::AddressChecker *obj;
     PyBindGenWrapperFlags flags:8;
 } PyNs3AddressChecker;
@@ -2574,6 +3360,25 @@ typedef struct {
 
 extern PyTypeObject *_PyNs3BridgeNetDevice_Type;
 #define PyNs3BridgeNetDevice_Type (*_PyNs3BridgeNetDevice_Type)
+
+class PyNs3BridgeNetDevice__PythonHelper : public ns3::BridgeNetDevice
+{
+public:
+    PyObject *m_pyself;
+
+    void set_pyobj(PyObject *pyobj)
+    {
+        Py_XDECREF(m_pyself);
+        Py_INCREF(pyobj);
+        m_pyself = pyobj;
+    }
+
+    virtual ~PyNs3BridgeNetDevice__PythonHelper()
+    {
+        Py_CLEAR(m_pyself);
+    }
+
+};
 
 
 typedef struct {
@@ -8599,6 +9404,111 @@ typedef struct {
 
 extern PyTypeObject PyNs3LoopbackNetDevice_Type;
 
+class PyNs3LoopbackNetDevice__PythonHelper : public ns3::LoopbackNetDevice
+{
+public:
+    PyObject *m_pyself;
+    PyNs3LoopbackNetDevice__PythonHelper(ns3::LoopbackNetDevice const & arg0)
+        : ns3::LoopbackNetDevice(arg0), m_pyself(NULL)
+        {}
+
+    PyNs3LoopbackNetDevice__PythonHelper()
+        : ns3::LoopbackNetDevice(), m_pyself(NULL)
+        {}
+
+
+    void set_pyobj(PyObject *pyobj)
+    {
+        Py_XDECREF(m_pyself);
+        Py_INCREF(pyobj);
+        m_pyself = pyobj;
+    }
+
+    virtual ~PyNs3LoopbackNetDevice__PythonHelper()
+    {
+        Py_CLEAR(m_pyself);
+    }
+
+
+    static PyObject * _wrap_NotifyConstructionCompleted(PyNs3LoopbackNetDevice *self);
+    inline void NotifyConstructionCompleted__parent_caller()
+    { ns3::ObjectBase::NotifyConstructionCompleted(); }
+
+    static PyObject * _wrap_DoInitialize(PyNs3LoopbackNetDevice *self);
+    inline void DoInitialize__parent_caller()
+    { ns3::Object::DoInitialize(); }
+
+    static PyObject * _wrap_NotifyNewAggregate(PyNs3LoopbackNetDevice *self);
+    inline void NotifyNewAggregate__parent_caller()
+    { ns3::Object::NotifyNewAggregate(); }
+
+    static PyObject * _wrap_DoDispose(PyNs3LoopbackNetDevice *self);
+    inline void DoDispose__parent_caller()
+    { ns3::LoopbackNetDevice::DoDispose(); }
+
+    virtual ns3::Address GetAddress() const;
+
+    virtual ns3::Address GetBroadcast() const;
+
+    virtual ns3::Ptr< ns3::Channel > GetChannel() const;
+
+    virtual uint32_t GetIfIndex() const;
+
+    virtual uint16_t GetMtu() const;
+
+    virtual ns3::Address GetMulticast(ns3::Ipv4Address multicastGroup) const;
+
+    virtual ns3::Address GetMulticast(ns3::Ipv6Address addr) const;
+
+    virtual ns3::Ptr< ns3::Node > GetNode() const;
+
+    virtual bool IsBridge() const;
+
+    virtual bool IsBroadcast() const;
+
+    virtual bool IsLinkUp() const;
+
+    virtual bool IsMulticast() const;
+
+    virtual bool IsPointToPoint() const;
+
+    virtual bool NeedsArp() const;
+
+    virtual bool Send(ns3::Ptr< ns3::Packet > packet, ns3::Address const & dest, uint16_t protocolNumber);
+
+    virtual bool SendFrom(ns3::Ptr< ns3::Packet > packet, ns3::Address const & source, ns3::Address const & dest, uint16_t protocolNumber);
+
+    virtual void SetAddress(ns3::Address address);
+
+    virtual void SetIfIndex(uint32_t const index);
+
+    virtual bool SetMtu(uint16_t const mtu);
+
+    virtual void SetNode(ns3::Ptr< ns3::Node > node);
+
+    virtual bool SupportsSendFrom() const;
+
+    virtual void DoDispose();
+
+    virtual ns3::TypeId GetInstanceTypeId() const;
+
+    virtual void DoInitialize();
+
+    virtual void NotifyNewAggregate();
+
+    virtual void NotifyConstructionCompleted();
+
+    static ns3::TypeId GetTypeId (void)
+    {
+      static ns3::TypeId tid = ns3::TypeId ("PyNs3LoopbackNetDevice__PythonHelper")
+        .SetParent< ns3::LoopbackNetDevice > ()
+        ;
+      return tid;
+    }
+};
+
+NS_OBJECT_ENSURE_REGISTERED (PyNs3LoopbackNetDevice__PythonHelper);
+
 
 typedef struct {
     PyObject_HEAD
@@ -8730,6 +9640,57 @@ int _wrap_convert_py2c__std__set__lt___unsigned_int___gt__(PyObject *arg, std::s
 
 typedef struct {
     PyObject_HEAD
+    ns3::Config::MatchContainer *obj;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3ConfigMatchContainer;
+
+
+extern PyTypeObject *_PyNs3ConfigMatchContainer_Type;
+#define PyNs3ConfigMatchContainer_Type (*_PyNs3ConfigMatchContainer_Type)
+
+extern std::map<void*, PyObject*> *_PyNs3ConfigMatchContainer_wrapper_registry;
+#define PyNs3ConfigMatchContainer_wrapper_registry (*_PyNs3ConfigMatchContainer_wrapper_registry)
+
+typedef struct {
+    PyObject_HEAD
+    std::vector< ns3::Ptr< ns3::Object > > *obj;
+} Pystd__vector__lt___ns3__Ptr__lt___ns3__Object___gt_____gt__;
+
+
+typedef struct {
+    PyObject_HEAD
+    Pystd__vector__lt___ns3__Ptr__lt___ns3__Object___gt_____gt__ *container;
+    std::vector< ns3::Ptr< ns3::Object > >::iterator *iterator;
+} Pystd__vector__lt___ns3__Ptr__lt___ns3__Object___gt_____gt__Iter;
+
+
+extern PyTypeObject Pystd__vector__lt___ns3__Ptr__lt___ns3__Object___gt_____gt___Type;
+extern PyTypeObject Pystd__vector__lt___ns3__Ptr__lt___ns3__Object___gt_____gt__Iter_Type;
+
+int _wrap_convert_py2c__std__vector__lt___ns3__Ptr__lt___ns3__Object___gt_____gt__(PyObject *arg, std::vector< ns3::Ptr< ns3::Object > > *container);
+
+typedef struct {
+    PyObject_HEAD
+    std::vector< std::string > *obj;
+} Pystd__vector__lt___std__string___gt__;
+
+
+typedef struct {
+    PyObject_HEAD
+    Pystd__vector__lt___std__string___gt__ *container;
+    std::vector< std::string >::iterator *iterator;
+} Pystd__vector__lt___std__string___gt__Iter;
+
+
+extern PyTypeObject Pystd__vector__lt___std__string___gt___Type;
+extern PyTypeObject Pystd__vector__lt___std__string___gt__Iter_Type;
+
+int _wrap_convert_py2c__std__vector__lt___std__string___gt__(PyObject *arg, std::vector< std::string > *container);
+/* --- forward declarations --- */
+
+
+typedef struct {
+    PyObject_HEAD
     ns3::Hash::Implementation *obj;
     PyBindGenWrapperFlags flags:8;
 } PyNs3HashImplementation;
@@ -8784,6 +9745,240 @@ typedef struct {
 extern PyTypeObject *_PyNs3HashFunctionMurmur3_Type;
 #define PyNs3HashFunctionMurmur3_Type (*_PyNs3HashFunctionMurmur3_Type)
 
+/* --- forward declarations --- */
+
+
+typedef struct {
+    PyObject_HEAD
+    std::list< std::string > *obj;
+} Pystd__list__lt___std__string___gt__;
+
+
+typedef struct {
+    PyObject_HEAD
+    Pystd__list__lt___std__string___gt__ *container;
+    std::list< std::string >::iterator *iterator;
+} Pystd__list__lt___std__string___gt__Iter;
+
+
+extern PyTypeObject Pystd__list__lt___std__string___gt___Type;
+extern PyTypeObject Pystd__list__lt___std__string___gt__Iter_Type;
+
+int _wrap_convert_py2c__std__list__lt___std__string___gt__(PyObject *arg, std::list< std::string > *container);
+/* --- forward declarations --- */
+
+
+typedef struct {
+    PyObject_HEAD
+    ns3::aodv::DuplicatePacketDetection *obj;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3AodvDuplicatePacketDetection;
+
+
+extern PyTypeObject *_PyNs3AodvDuplicatePacketDetection_Type;
+#define PyNs3AodvDuplicatePacketDetection_Type (*_PyNs3AodvDuplicatePacketDetection_Type)
+
+extern std::map<void*, PyObject*> *_PyNs3AodvDuplicatePacketDetection_wrapper_registry;
+#define PyNs3AodvDuplicatePacketDetection_wrapper_registry (*_PyNs3AodvDuplicatePacketDetection_wrapper_registry)
+
+typedef struct {
+    PyObject_HEAD
+    ns3::aodv::IdCache *obj;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3AodvIdCache;
+
+
+extern PyTypeObject *_PyNs3AodvIdCache_Type;
+#define PyNs3AodvIdCache_Type (*_PyNs3AodvIdCache_Type)
+
+extern std::map<void*, PyObject*> *_PyNs3AodvIdCache_wrapper_registry;
+#define PyNs3AodvIdCache_wrapper_registry (*_PyNs3AodvIdCache_wrapper_registry)
+
+typedef struct {
+    PyObject_HEAD
+    ns3::aodv::Neighbors *obj;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3AodvNeighbors;
+
+
+extern PyTypeObject *_PyNs3AodvNeighbors_Type;
+#define PyNs3AodvNeighbors_Type (*_PyNs3AodvNeighbors_Type)
+
+extern std::map<void*, PyObject*> *_PyNs3AodvNeighbors_wrapper_registry;
+#define PyNs3AodvNeighbors_wrapper_registry (*_PyNs3AodvNeighbors_wrapper_registry)
+
+typedef struct {
+    PyObject_HEAD
+    ns3::aodv::Neighbors::Neighbor *obj;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3AodvNeighborsNeighbor;
+
+
+extern PyTypeObject *_PyNs3AodvNeighborsNeighbor_Type;
+#define PyNs3AodvNeighborsNeighbor_Type (*_PyNs3AodvNeighborsNeighbor_Type)
+
+extern std::map<void*, PyObject*> *_PyNs3AodvNeighborsNeighbor_wrapper_registry;
+#define PyNs3AodvNeighborsNeighbor_wrapper_registry (*_PyNs3AodvNeighborsNeighbor_wrapper_registry)
+
+typedef struct {
+    PyObject_HEAD
+    ns3::aodv::QueueEntry *obj;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3AodvQueueEntry;
+
+
+extern PyTypeObject *_PyNs3AodvQueueEntry_Type;
+#define PyNs3AodvQueueEntry_Type (*_PyNs3AodvQueueEntry_Type)
+
+extern std::map<void*, PyObject*> *_PyNs3AodvQueueEntry_wrapper_registry;
+#define PyNs3AodvQueueEntry_wrapper_registry (*_PyNs3AodvQueueEntry_wrapper_registry)
+
+typedef struct {
+    PyObject_HEAD
+    ns3::aodv::RequestQueue *obj;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3AodvRequestQueue;
+
+
+extern PyTypeObject *_PyNs3AodvRequestQueue_Type;
+#define PyNs3AodvRequestQueue_Type (*_PyNs3AodvRequestQueue_Type)
+
+extern std::map<void*, PyObject*> *_PyNs3AodvRequestQueue_wrapper_registry;
+#define PyNs3AodvRequestQueue_wrapper_registry (*_PyNs3AodvRequestQueue_wrapper_registry)
+
+typedef struct {
+    PyObject_HEAD
+    ns3::aodv::RerrHeader *obj;
+    PyObject *inst_dict;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3AodvRerrHeader;
+
+
+extern PyTypeObject *_PyNs3AodvRerrHeader_Type;
+#define PyNs3AodvRerrHeader_Type (*_PyNs3AodvRerrHeader_Type)
+
+
+typedef struct {
+    PyObject_HEAD
+    ns3::aodv::RoutingProtocol *obj;
+    PyObject *inst_dict;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3AodvRoutingProtocol;
+
+
+extern PyTypeObject *_PyNs3AodvRoutingProtocol_Type;
+#define PyNs3AodvRoutingProtocol_Type (*_PyNs3AodvRoutingProtocol_Type)
+
+
+typedef struct {
+    PyObject_HEAD
+    ns3::aodv::RoutingTable *obj;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3AodvRoutingTable;
+
+
+extern PyTypeObject *_PyNs3AodvRoutingTable_Type;
+#define PyNs3AodvRoutingTable_Type (*_PyNs3AodvRoutingTable_Type)
+
+extern std::map<void*, PyObject*> *_PyNs3AodvRoutingTable_wrapper_registry;
+#define PyNs3AodvRoutingTable_wrapper_registry (*_PyNs3AodvRoutingTable_wrapper_registry)
+
+typedef struct {
+    PyObject_HEAD
+    ns3::aodv::RoutingTableEntry *obj;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3AodvRoutingTableEntry;
+
+
+extern PyTypeObject *_PyNs3AodvRoutingTableEntry_Type;
+#define PyNs3AodvRoutingTableEntry_Type (*_PyNs3AodvRoutingTableEntry_Type)
+
+extern std::map<void*, PyObject*> *_PyNs3AodvRoutingTableEntry_wrapper_registry;
+#define PyNs3AodvRoutingTableEntry_wrapper_registry (*_PyNs3AodvRoutingTableEntry_wrapper_registry)
+
+typedef struct {
+    PyObject_HEAD
+    ns3::aodv::RrepAckHeader *obj;
+    PyObject *inst_dict;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3AodvRrepAckHeader;
+
+
+extern PyTypeObject *_PyNs3AodvRrepAckHeader_Type;
+#define PyNs3AodvRrepAckHeader_Type (*_PyNs3AodvRrepAckHeader_Type)
+
+
+typedef struct {
+    PyObject_HEAD
+    ns3::aodv::RrepHeader *obj;
+    PyObject *inst_dict;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3AodvRrepHeader;
+
+
+extern PyTypeObject *_PyNs3AodvRrepHeader_Type;
+#define PyNs3AodvRrepHeader_Type (*_PyNs3AodvRrepHeader_Type)
+
+
+typedef struct {
+    PyObject_HEAD
+    ns3::aodv::RreqHeader *obj;
+    PyObject *inst_dict;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3AodvRreqHeader;
+
+
+extern PyTypeObject *_PyNs3AodvRreqHeader_Type;
+#define PyNs3AodvRreqHeader_Type (*_PyNs3AodvRreqHeader_Type)
+
+
+typedef struct {
+    PyObject_HEAD
+    ns3::aodv::TypeHeader *obj;
+    PyObject *inst_dict;
+    PyBindGenWrapperFlags flags:8;
+} PyNs3AodvTypeHeader;
+
+
+extern PyTypeObject *_PyNs3AodvTypeHeader_Type;
+#define PyNs3AodvTypeHeader_Type (*_PyNs3AodvTypeHeader_Type)
+
+
+typedef struct {
+    PyObject_HEAD
+    std::map< ns3::Ipv4Address, unsigned int > *obj;
+} Pystd__map__lt___ns3__Ipv4Address__unsigned_int___gt__;
+
+
+typedef struct {
+    PyObject_HEAD
+    Pystd__map__lt___ns3__Ipv4Address__unsigned_int___gt__ *container;
+    std::map< ns3::Ipv4Address, unsigned int >::iterator *iterator;
+} Pystd__map__lt___ns3__Ipv4Address__unsigned_int___gt__Iter;
+
+
+extern PyTypeObject Pystd__map__lt___ns3__Ipv4Address__unsigned_int___gt___Type;
+extern PyTypeObject Pystd__map__lt___ns3__Ipv4Address__unsigned_int___gt__Iter_Type;
+
+int _wrap_convert_py2c__std__map__lt___ns3__Ipv4Address__unsigned_int___gt__(PyObject *arg, std::map< ns3::Ipv4Address, unsigned int > *container);
+
+typedef struct {
+    PyObject_HEAD
+    std::vector< ns3::Ipv4Address > *obj;
+} Pystd__vector__lt___ns3__Ipv4Address___gt__;
+
+
+typedef struct {
+    PyObject_HEAD
+    Pystd__vector__lt___ns3__Ipv4Address___gt__ *container;
+    std::vector< ns3::Ipv4Address >::iterator *iterator;
+} Pystd__vector__lt___ns3__Ipv4Address___gt__Iter;
+
+
+extern PyTypeObject Pystd__vector__lt___ns3__Ipv4Address___gt___Type;
+extern PyTypeObject Pystd__vector__lt___ns3__Ipv4Address___gt__Iter_Type;
+
+int _wrap_convert_py2c__std__vector__lt___ns3__Ipv4Address___gt__(PyObject *arg, std::vector< ns3::Ipv4Address > *container);
 
 class PythonCallbackImpl0 : public ns3::CallbackImpl<void, ns3::Ipv6Address, unsigned char, unsigned char, unsigned char, unsigned int, ns3::empty, ns3::empty, ns3::empty, ns3::empty>
 {
@@ -8917,7 +10112,7 @@ public:
 };
 
 
-class PythonCallbackImpl2 : public ns3::CallbackImpl<void, ns3::Ptr<ns3::Socket>, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty>
+class PythonCallbackImpl2 : public ns3::CallbackImpl<void, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty>
 {
 public:
     PyObject *m_callback;
@@ -8938,6 +10133,469 @@ public:
     virtual bool IsEqual(ns3::Ptr<const ns3::CallbackImplBase> other_base) const
     {
         const PythonCallbackImpl2 *other = dynamic_cast<const PythonCallbackImpl2*> (ns3::PeekPointer (other_base));
+        if (other != NULL)
+            return (other->m_callback == m_callback);
+        else
+            return false;
+    }
+
+
+    void
+    operator()()
+    {
+        PyGILState_STATE __py_gil_state;
+        PyObject *py_retval;
+        PyObject *args;
+
+        __py_gil_state = (PyEval_ThreadsInitialized() ? PyGILState_Ensure() : (PyGILState_STATE) 0);
+        args = Py_BuildValue((char *) "()");
+        py_retval = PyObject_CallObject(m_callback, args);
+        if (py_retval == NULL) {
+            Py_DECREF(args);
+            if (PyEval_ThreadsInitialized())
+                PyGILState_Release(__py_gil_state);
+            return;
+        }
+        if (py_retval != Py_None) {
+            PyErr_SetString(PyExc_TypeError, "function/method should return None");
+            Py_DECREF(py_retval);
+            Py_DECREF(args);
+            if (PyEval_ThreadsInitialized())
+                PyGILState_Release(__py_gil_state);
+            return;
+        }
+        Py_DECREF(py_retval);
+        Py_DECREF(args);
+        if (PyEval_ThreadsInitialized())
+            PyGILState_Release(__py_gil_state);
+        return;
+    }
+};
+
+
+class PythonCallbackImpl3 : public ns3::CallbackImpl<void, ns3::Ptr<ns3::Packet const>, ns3::Ipv4Header const&, ns3::Socket::SocketErrno, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty>
+{
+public:
+    PyObject *m_callback;
+    PythonCallbackImpl3(PyObject *callback)
+    {
+        Py_INCREF(callback);
+        m_callback = callback;
+    }
+    virtual ~PythonCallbackImpl3()
+    {
+        PyGILState_STATE __py_gil_state;
+        __py_gil_state = (PyEval_ThreadsInitialized() ? PyGILState_Ensure() : (PyGILState_STATE) 0);
+        Py_DECREF(m_callback);
+        m_callback = NULL;
+        PyGILState_Release(__py_gil_state);
+    }
+
+    virtual bool IsEqual(ns3::Ptr<const ns3::CallbackImplBase> other_base) const
+    {
+        const PythonCallbackImpl3 *other = dynamic_cast<const PythonCallbackImpl3*> (ns3::PeekPointer (other_base));
+        if (other != NULL)
+            return (other->m_callback == m_callback);
+        else
+            return false;
+    }
+
+
+    void
+    operator()(ns3::Ptr< ns3::Packet const > arg1, ns3::Ipv4Header const & arg2, ns3::Socket::SocketErrno arg3)
+    {
+        PyGILState_STATE __py_gil_state;
+        PyObject *py_retval;
+        PyNs3Packet *py_Packet;
+        std::map<void*, PyObject*>::const_iterator wrapper_lookup_iter;
+        PyTypeObject *wrapper_type = 0;
+        PyNs3Ipv4Header *py_Ipv4Header;
+        PyObject *args;
+
+        __py_gil_state = (PyEval_ThreadsInitialized() ? PyGILState_Ensure() : (PyGILState_STATE) 0);
+        wrapper_lookup_iter = PyNs3Empty_wrapper_registry.find((void *) const_cast<ns3::Packet *> (ns3::PeekPointer (arg1)));
+        if (wrapper_lookup_iter == PyNs3Empty_wrapper_registry.end()) {
+            py_Packet = NULL;
+        } else {
+            py_Packet = (PyNs3Packet *) wrapper_lookup_iter->second;
+            Py_INCREF(py_Packet);
+        }
+
+        if (py_Packet == NULL)
+        {
+            wrapper_type = PyNs3SimpleRefCount__Ns3Packet_Ns3Empty_Ns3DefaultDeleter__lt__ns3Packet__gt____typeid_map.lookup_wrapper(typeid(*const_cast<ns3::Packet *> (ns3::PeekPointer (arg1))), &PyNs3Packet_Type);
+            py_Packet = PyObject_New(PyNs3Packet, wrapper_type);
+
+            py_Packet->flags = PYBINDGEN_WRAPPER_FLAG_NONE;
+            const_cast<ns3::Packet *> (ns3::PeekPointer (arg1))->Ref();
+            py_Packet->obj = const_cast<ns3::Packet *> (ns3::PeekPointer (arg1));
+            PyNs3Empty_wrapper_registry[(void *) py_Packet->obj] = (PyObject *) py_Packet;
+        }
+        py_Ipv4Header = PyObject_GC_New(PyNs3Ipv4Header, &PyNs3Ipv4Header_Type);
+        py_Ipv4Header->inst_dict = NULL;
+        py_Ipv4Header->inst_dict = NULL;
+        py_Ipv4Header->flags = PYBINDGEN_WRAPPER_FLAG_NONE;
+        py_Ipv4Header->obj = new ns3::Ipv4Header(arg2);
+        PyNs3ObjectBase_wrapper_registry[(void *) py_Ipv4Header->obj] = (PyObject *) py_Ipv4Header;
+        args = Py_BuildValue((char *) "(NNi)", py_Packet, py_Ipv4Header, arg3);
+        py_retval = PyObject_CallObject(m_callback, args);
+        if (py_retval == NULL) {
+            Py_DECREF(args);
+            if (PyEval_ThreadsInitialized())
+                PyGILState_Release(__py_gil_state);
+            return;
+        }
+        if (py_retval != Py_None) {
+            PyErr_SetString(PyExc_TypeError, "function/method should return None");
+            Py_DECREF(py_retval);
+            Py_DECREF(args);
+            if (PyEval_ThreadsInitialized())
+                PyGILState_Release(__py_gil_state);
+            return;
+        }
+        Py_DECREF(py_retval);
+        Py_DECREF(args);
+        if (PyEval_ThreadsInitialized())
+            PyGILState_Release(__py_gil_state);
+        return;
+    }
+};
+
+
+class PythonCallbackImpl4 : public ns3::CallbackImpl<void, ns3::Ptr<ns3::Ipv4Route>, ns3::Ptr<ns3::Packet const>, ns3::Ipv4Header const&, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty>
+{
+public:
+    PyObject *m_callback;
+    PythonCallbackImpl4(PyObject *callback)
+    {
+        Py_INCREF(callback);
+        m_callback = callback;
+    }
+    virtual ~PythonCallbackImpl4()
+    {
+        PyGILState_STATE __py_gil_state;
+        __py_gil_state = (PyEval_ThreadsInitialized() ? PyGILState_Ensure() : (PyGILState_STATE) 0);
+        Py_DECREF(m_callback);
+        m_callback = NULL;
+        PyGILState_Release(__py_gil_state);
+    }
+
+    virtual bool IsEqual(ns3::Ptr<const ns3::CallbackImplBase> other_base) const
+    {
+        const PythonCallbackImpl4 *other = dynamic_cast<const PythonCallbackImpl4*> (ns3::PeekPointer (other_base));
+        if (other != NULL)
+            return (other->m_callback == m_callback);
+        else
+            return false;
+    }
+
+
+    void
+    operator()(ns3::Ptr< ns3::Ipv4Route > arg1, ns3::Ptr< ns3::Packet const > arg2, ns3::Ipv4Header const & arg3)
+    {
+        PyGILState_STATE __py_gil_state;
+        PyObject *py_retval;
+        PyNs3Ipv4Route *py_Ipv4Route;
+        std::map<void*, PyObject*>::const_iterator wrapper_lookup_iter;
+        PyTypeObject *wrapper_type = 0;
+        PyNs3Packet *py_Packet;
+        std::map<void*, PyObject*>::const_iterator wrapper_lookup_iter2;
+        PyTypeObject *wrapper_type2 = 0;
+        PyNs3Ipv4Header *py_Ipv4Header;
+        PyObject *args;
+
+        __py_gil_state = (PyEval_ThreadsInitialized() ? PyGILState_Ensure() : (PyGILState_STATE) 0);
+        wrapper_lookup_iter = PyNs3Empty_wrapper_registry.find((void *) const_cast<ns3::Ipv4Route *> (ns3::PeekPointer (arg1)));
+        if (wrapper_lookup_iter == PyNs3Empty_wrapper_registry.end()) {
+            py_Ipv4Route = NULL;
+        } else {
+            py_Ipv4Route = (PyNs3Ipv4Route *) wrapper_lookup_iter->second;
+            Py_INCREF(py_Ipv4Route);
+        }
+
+        if (py_Ipv4Route == NULL)
+        {
+            wrapper_type = PyNs3SimpleRefCount__Ns3Ipv4Route_Ns3Empty_Ns3DefaultDeleter__lt__ns3Ipv4Route__gt____typeid_map.lookup_wrapper(typeid(*const_cast<ns3::Ipv4Route *> (ns3::PeekPointer (arg1))), &PyNs3Ipv4Route_Type);
+            py_Ipv4Route = PyObject_New(PyNs3Ipv4Route, wrapper_type);
+
+            py_Ipv4Route->flags = PYBINDGEN_WRAPPER_FLAG_NONE;
+            const_cast<ns3::Ipv4Route *> (ns3::PeekPointer (arg1))->Ref();
+            py_Ipv4Route->obj = const_cast<ns3::Ipv4Route *> (ns3::PeekPointer (arg1));
+            PyNs3Empty_wrapper_registry[(void *) py_Ipv4Route->obj] = (PyObject *) py_Ipv4Route;
+        }
+        wrapper_lookup_iter2 = PyNs3Empty_wrapper_registry.find((void *) const_cast<ns3::Packet *> (ns3::PeekPointer (arg2)));
+        if (wrapper_lookup_iter2 == PyNs3Empty_wrapper_registry.end()) {
+            py_Packet = NULL;
+        } else {
+            py_Packet = (PyNs3Packet *) wrapper_lookup_iter2->second;
+            Py_INCREF(py_Packet);
+        }
+
+        if (py_Packet == NULL)
+        {
+            wrapper_type2 = PyNs3SimpleRefCount__Ns3Packet_Ns3Empty_Ns3DefaultDeleter__lt__ns3Packet__gt____typeid_map.lookup_wrapper(typeid(*const_cast<ns3::Packet *> (ns3::PeekPointer (arg2))), &PyNs3Packet_Type);
+            py_Packet = PyObject_New(PyNs3Packet, wrapper_type2);
+
+            py_Packet->flags = PYBINDGEN_WRAPPER_FLAG_NONE;
+            const_cast<ns3::Packet *> (ns3::PeekPointer (arg2))->Ref();
+            py_Packet->obj = const_cast<ns3::Packet *> (ns3::PeekPointer (arg2));
+            PyNs3Empty_wrapper_registry[(void *) py_Packet->obj] = (PyObject *) py_Packet;
+        }
+        py_Ipv4Header = PyObject_GC_New(PyNs3Ipv4Header, &PyNs3Ipv4Header_Type);
+        py_Ipv4Header->inst_dict = NULL;
+        py_Ipv4Header->inst_dict = NULL;
+        py_Ipv4Header->flags = PYBINDGEN_WRAPPER_FLAG_NONE;
+        py_Ipv4Header->obj = new ns3::Ipv4Header(arg3);
+        PyNs3ObjectBase_wrapper_registry[(void *) py_Ipv4Header->obj] = (PyObject *) py_Ipv4Header;
+        args = Py_BuildValue((char *) "(NNN)", py_Ipv4Route, py_Packet, py_Ipv4Header);
+        py_retval = PyObject_CallObject(m_callback, args);
+        if (py_retval == NULL) {
+            Py_DECREF(args);
+            if (PyEval_ThreadsInitialized())
+                PyGILState_Release(__py_gil_state);
+            return;
+        }
+        if (py_retval != Py_None) {
+            PyErr_SetString(PyExc_TypeError, "function/method should return None");
+            Py_DECREF(py_retval);
+            Py_DECREF(args);
+            if (PyEval_ThreadsInitialized())
+                PyGILState_Release(__py_gil_state);
+            return;
+        }
+        Py_DECREF(py_retval);
+        Py_DECREF(args);
+        if (PyEval_ThreadsInitialized())
+            PyGILState_Release(__py_gil_state);
+        return;
+    }
+};
+
+
+class PythonCallbackImpl5 : public ns3::CallbackImpl<void, ns3::WifiMacHeader const&, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty>
+{
+public:
+    PyObject *m_callback;
+    PythonCallbackImpl5(PyObject *callback)
+    {
+        Py_INCREF(callback);
+        m_callback = callback;
+    }
+    virtual ~PythonCallbackImpl5()
+    {
+        PyGILState_STATE __py_gil_state;
+        __py_gil_state = (PyEval_ThreadsInitialized() ? PyGILState_Ensure() : (PyGILState_STATE) 0);
+        Py_DECREF(m_callback);
+        m_callback = NULL;
+        PyGILState_Release(__py_gil_state);
+    }
+
+    virtual bool IsEqual(ns3::Ptr<const ns3::CallbackImplBase> other_base) const
+    {
+        const PythonCallbackImpl5 *other = dynamic_cast<const PythonCallbackImpl5*> (ns3::PeekPointer (other_base));
+        if (other != NULL)
+            return (other->m_callback == m_callback);
+        else
+            return false;
+    }
+
+
+    void
+    operator()(ns3::WifiMacHeader const & arg1)
+    {
+        PyGILState_STATE __py_gil_state;
+        PyObject *py_retval;
+        PyNs3WifiMacHeader *py_WifiMacHeader;
+        PyObject *args;
+
+        __py_gil_state = (PyEval_ThreadsInitialized() ? PyGILState_Ensure() : (PyGILState_STATE) 0);
+        py_WifiMacHeader = PyObject_GC_New(PyNs3WifiMacHeader, &PyNs3WifiMacHeader_Type);
+        py_WifiMacHeader->inst_dict = NULL;
+        py_WifiMacHeader->inst_dict = NULL;
+        py_WifiMacHeader->flags = PYBINDGEN_WRAPPER_FLAG_NONE;
+        py_WifiMacHeader->obj = new ns3::WifiMacHeader(arg1);
+        PyNs3ObjectBase_wrapper_registry[(void *) py_WifiMacHeader->obj] = (PyObject *) py_WifiMacHeader;
+        args = Py_BuildValue((char *) "(N)", py_WifiMacHeader);
+        py_retval = PyObject_CallObject(m_callback, args);
+        if (py_retval == NULL) {
+            Py_DECREF(args);
+            if (PyEval_ThreadsInitialized())
+                PyGILState_Release(__py_gil_state);
+            return;
+        }
+        if (py_retval != Py_None) {
+            PyErr_SetString(PyExc_TypeError, "function/method should return None");
+            Py_DECREF(py_retval);
+            Py_DECREF(args);
+            if (PyEval_ThreadsInitialized())
+                PyGILState_Release(__py_gil_state);
+            return;
+        }
+        Py_DECREF(py_retval);
+        Py_DECREF(args);
+        if (PyEval_ThreadsInitialized())
+            PyGILState_Release(__py_gil_state);
+        return;
+    }
+};
+
+
+class PythonCallbackImpl6 : public ns3::CallbackImpl<void, ns3::Ipv4Address, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty>
+{
+public:
+    PyObject *m_callback;
+    PythonCallbackImpl6(PyObject *callback)
+    {
+        Py_INCREF(callback);
+        m_callback = callback;
+    }
+    virtual ~PythonCallbackImpl6()
+    {
+        PyGILState_STATE __py_gil_state;
+        __py_gil_state = (PyEval_ThreadsInitialized() ? PyGILState_Ensure() : (PyGILState_STATE) 0);
+        Py_DECREF(m_callback);
+        m_callback = NULL;
+        PyGILState_Release(__py_gil_state);
+    }
+
+    virtual bool IsEqual(ns3::Ptr<const ns3::CallbackImplBase> other_base) const
+    {
+        const PythonCallbackImpl6 *other = dynamic_cast<const PythonCallbackImpl6*> (ns3::PeekPointer (other_base));
+        if (other != NULL)
+            return (other->m_callback == m_callback);
+        else
+            return false;
+    }
+
+
+    void
+    operator()(ns3::Ipv4Address arg1)
+    {
+        PyGILState_STATE __py_gil_state;
+        PyObject *py_retval;
+        PyNs3Ipv4Address *py_Ipv4Address;
+        PyObject *args;
+
+        __py_gil_state = (PyEval_ThreadsInitialized() ? PyGILState_Ensure() : (PyGILState_STATE) 0);
+        py_Ipv4Address = PyObject_New(PyNs3Ipv4Address, &PyNs3Ipv4Address_Type);
+        py_Ipv4Address->flags = PYBINDGEN_WRAPPER_FLAG_NONE;
+        py_Ipv4Address->obj = new ns3::Ipv4Address(arg1);
+        PyNs3Ipv4Address_wrapper_registry[(void *) py_Ipv4Address->obj] = (PyObject *) py_Ipv4Address;
+        args = Py_BuildValue((char *) "(N)", py_Ipv4Address);
+        py_retval = PyObject_CallObject(m_callback, args);
+        if (py_retval == NULL) {
+            Py_DECREF(args);
+            if (PyEval_ThreadsInitialized())
+                PyGILState_Release(__py_gil_state);
+            return;
+        }
+        if (py_retval != Py_None) {
+            PyErr_SetString(PyExc_TypeError, "function/method should return None");
+            Py_DECREF(py_retval);
+            Py_DECREF(args);
+            if (PyEval_ThreadsInitialized())
+                PyGILState_Release(__py_gil_state);
+            return;
+        }
+        Py_DECREF(py_retval);
+        Py_DECREF(args);
+        if (PyEval_ThreadsInitialized())
+            PyGILState_Release(__py_gil_state);
+        return;
+    }
+};
+
+
+class PythonCallbackImpl8 : public ns3::CallbackImpl<bool, std::string, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty>
+{
+public:
+    PyObject *m_callback;
+    PythonCallbackImpl8(PyObject *callback)
+    {
+        Py_INCREF(callback);
+        m_callback = callback;
+    }
+    virtual ~PythonCallbackImpl8()
+    {
+        PyGILState_STATE __py_gil_state;
+        __py_gil_state = (PyEval_ThreadsInitialized() ? PyGILState_Ensure() : (PyGILState_STATE) 0);
+        Py_DECREF(m_callback);
+        m_callback = NULL;
+        PyGILState_Release(__py_gil_state);
+    }
+
+    virtual bool IsEqual(ns3::Ptr<const ns3::CallbackImplBase> other_base) const
+    {
+        const PythonCallbackImpl8 *other = dynamic_cast<const PythonCallbackImpl8*> (ns3::PeekPointer (other_base));
+        if (other != NULL)
+            return (other->m_callback == m_callback);
+        else
+            return false;
+    }
+
+
+    bool
+    operator()(std::string arg1)
+    {
+        PyGILState_STATE __py_gil_state;
+        PyObject *py_retval;
+        bool retval;
+        const char *arg1_ptr;
+        Py_ssize_t arg1_len;
+        PyObject *args;
+        PyObject *py_boolretval;
+
+        __py_gil_state = (PyEval_ThreadsInitialized() ? PyGILState_Ensure() : (PyGILState_STATE) 0);
+        arg1_ptr = (arg1).c_str();
+        arg1_len = (arg1).size();
+        args = Py_BuildValue((char *) "(s#)", arg1_ptr, arg1_len);
+        py_retval = PyObject_CallObject(m_callback, args);
+        if (py_retval == NULL) {
+            Py_DECREF(args);
+            if (PyEval_ThreadsInitialized())
+                PyGILState_Release(__py_gil_state);
+            return false;
+        }
+        py_retval = Py_BuildValue((char*) "(N)", py_retval);
+        if (!PyArg_ParseTuple(py_retval, (char *) "O", &py_boolretval)) {
+            PyErr_Print();
+            Py_DECREF(py_retval);
+            Py_DECREF(args);
+            if (PyEval_ThreadsInitialized())
+                PyGILState_Release(__py_gil_state);
+            return false;
+        }
+        retval = PyObject_IsTrue(py_boolretval);
+        Py_DECREF(py_retval);
+        Py_DECREF(args);
+        if (PyEval_ThreadsInitialized())
+            PyGILState_Release(__py_gil_state);
+        return retval;
+    }
+};
+
+
+class PythonCallbackImpl9 : public ns3::CallbackImpl<void, ns3::Ptr<ns3::Socket>, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty>
+{
+public:
+    PyObject *m_callback;
+    PythonCallbackImpl9(PyObject *callback)
+    {
+        Py_INCREF(callback);
+        m_callback = callback;
+    }
+    virtual ~PythonCallbackImpl9()
+    {
+        PyGILState_STATE __py_gil_state;
+        __py_gil_state = (PyEval_ThreadsInitialized() ? PyGILState_Ensure() : (PyGILState_STATE) 0);
+        Py_DECREF(m_callback);
+        m_callback = NULL;
+        PyGILState_Release(__py_gil_state);
+    }
+
+    virtual bool IsEqual(ns3::Ptr<const ns3::CallbackImplBase> other_base) const
+    {
+        const PythonCallbackImpl9 *other = dynamic_cast<const PythonCallbackImpl9*> (ns3::PeekPointer (other_base));
         if (other != NULL)
             return (other->m_callback == m_callback);
         else
@@ -9007,16 +10665,16 @@ public:
 };
 
 
-class PythonCallbackImpl3 : public ns3::CallbackImpl<void, ns3::Ptr<ns3::Socket>, unsigned int, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty>
+class PythonCallbackImpl10 : public ns3::CallbackImpl<void, ns3::Ptr<ns3::Socket>, unsigned int, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty>
 {
 public:
     PyObject *m_callback;
-    PythonCallbackImpl3(PyObject *callback)
+    PythonCallbackImpl10(PyObject *callback)
     {
         Py_INCREF(callback);
         m_callback = callback;
     }
-    virtual ~PythonCallbackImpl3()
+    virtual ~PythonCallbackImpl10()
     {
         PyGILState_STATE __py_gil_state;
         __py_gil_state = (PyEval_ThreadsInitialized() ? PyGILState_Ensure() : (PyGILState_STATE) 0);
@@ -9027,7 +10685,7 @@ public:
 
     virtual bool IsEqual(ns3::Ptr<const ns3::CallbackImplBase> other_base) const
     {
-        const PythonCallbackImpl3 *other = dynamic_cast<const PythonCallbackImpl3*> (ns3::PeekPointer (other_base));
+        const PythonCallbackImpl10 *other = dynamic_cast<const PythonCallbackImpl10*> (ns3::PeekPointer (other_base));
         if (other != NULL)
             return (other->m_callback == m_callback);
         else
@@ -9097,16 +10755,16 @@ public:
 };
 
 
-class PythonCallbackImpl4 : public ns3::CallbackImpl<void, ns3::Ptr<ns3::Socket>, ns3::Address const&, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty>
+class PythonCallbackImpl11 : public ns3::CallbackImpl<void, ns3::Ptr<ns3::Socket>, ns3::Address const&, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty>
 {
 public:
     PyObject *m_callback;
-    PythonCallbackImpl4(PyObject *callback)
+    PythonCallbackImpl11(PyObject *callback)
     {
         Py_INCREF(callback);
         m_callback = callback;
     }
-    virtual ~PythonCallbackImpl4()
+    virtual ~PythonCallbackImpl11()
     {
         PyGILState_STATE __py_gil_state;
         __py_gil_state = (PyEval_ThreadsInitialized() ? PyGILState_Ensure() : (PyGILState_STATE) 0);
@@ -9117,7 +10775,7 @@ public:
 
     virtual bool IsEqual(ns3::Ptr<const ns3::CallbackImplBase> other_base) const
     {
-        const PythonCallbackImpl4 *other = dynamic_cast<const PythonCallbackImpl4*> (ns3::PeekPointer (other_base));
+        const PythonCallbackImpl11 *other = dynamic_cast<const PythonCallbackImpl11*> (ns3::PeekPointer (other_base));
         if (other != NULL)
             return (other->m_callback == m_callback);
         else
@@ -9192,16 +10850,16 @@ public:
 };
 
 
-class PythonCallbackImpl5 : public ns3::CallbackImpl<bool, ns3::Ptr<ns3::Socket>, ns3::Address const&, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty>
+class PythonCallbackImpl12 : public ns3::CallbackImpl<bool, ns3::Ptr<ns3::Socket>, ns3::Address const&, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty>
 {
 public:
     PyObject *m_callback;
-    PythonCallbackImpl5(PyObject *callback)
+    PythonCallbackImpl12(PyObject *callback)
     {
         Py_INCREF(callback);
         m_callback = callback;
     }
-    virtual ~PythonCallbackImpl5()
+    virtual ~PythonCallbackImpl12()
     {
         PyGILState_STATE __py_gil_state;
         __py_gil_state = (PyEval_ThreadsInitialized() ? PyGILState_Ensure() : (PyGILState_STATE) 0);
@@ -9212,7 +10870,7 @@ public:
 
     virtual bool IsEqual(ns3::Ptr<const ns3::CallbackImplBase> other_base) const
     {
-        const PythonCallbackImpl5 *other = dynamic_cast<const PythonCallbackImpl5*> (ns3::PeekPointer (other_base));
+        const PythonCallbackImpl12 *other = dynamic_cast<const PythonCallbackImpl12*> (ns3::PeekPointer (other_base));
         if (other != NULL)
             return (other->m_callback == m_callback);
         else
@@ -9291,16 +10949,16 @@ public:
 };
 
 
-class PythonCallbackImpl6 : public ns3::CallbackImpl<void, ns3::Ptr<ns3::Packet>, ns3::Ipv6Address, ns3::Ipv6Address, unsigned char, ns3::Ptr<ns3::Ipv6Route>, ns3::empty, ns3::empty, ns3::empty, ns3::empty>
+class PythonCallbackImpl13 : public ns3::CallbackImpl<void, ns3::Ptr<ns3::Packet>, ns3::Ipv6Address, ns3::Ipv6Address, unsigned char, ns3::Ptr<ns3::Ipv6Route>, ns3::empty, ns3::empty, ns3::empty, ns3::empty>
 {
 public:
     PyObject *m_callback;
-    PythonCallbackImpl6(PyObject *callback)
+    PythonCallbackImpl13(PyObject *callback)
     {
         Py_INCREF(callback);
         m_callback = callback;
     }
-    virtual ~PythonCallbackImpl6()
+    virtual ~PythonCallbackImpl13()
     {
         PyGILState_STATE __py_gil_state;
         __py_gil_state = (PyEval_ThreadsInitialized() ? PyGILState_Ensure() : (PyGILState_STATE) 0);
@@ -9311,7 +10969,7 @@ public:
 
     virtual bool IsEqual(ns3::Ptr<const ns3::CallbackImplBase> other_base) const
     {
-        const PythonCallbackImpl6 *other = dynamic_cast<const PythonCallbackImpl6*> (ns3::PeekPointer (other_base));
+        const PythonCallbackImpl13 *other = dynamic_cast<const PythonCallbackImpl13*> (ns3::PeekPointer (other_base));
         if (other != NULL)
             return (other->m_callback == m_callback);
         else
@@ -9404,16 +11062,16 @@ public:
 };
 
 
-class PythonCallbackImpl7 : public ns3::CallbackImpl<void, ns3::Ptr<ns3::Packet>, ns3::Ipv4Address, ns3::Ipv4Address, unsigned char, ns3::Ptr<ns3::Ipv4Route>, ns3::empty, ns3::empty, ns3::empty, ns3::empty>
+class PythonCallbackImpl14 : public ns3::CallbackImpl<void, ns3::Ptr<ns3::Packet>, ns3::Ipv4Address, ns3::Ipv4Address, unsigned char, ns3::Ptr<ns3::Ipv4Route>, ns3::empty, ns3::empty, ns3::empty, ns3::empty>
 {
 public:
     PyObject *m_callback;
-    PythonCallbackImpl7(PyObject *callback)
+    PythonCallbackImpl14(PyObject *callback)
     {
         Py_INCREF(callback);
         m_callback = callback;
     }
-    virtual ~PythonCallbackImpl7()
+    virtual ~PythonCallbackImpl14()
     {
         PyGILState_STATE __py_gil_state;
         __py_gil_state = (PyEval_ThreadsInitialized() ? PyGILState_Ensure() : (PyGILState_STATE) 0);
@@ -9424,7 +11082,7 @@ public:
 
     virtual bool IsEqual(ns3::Ptr<const ns3::CallbackImplBase> other_base) const
     {
-        const PythonCallbackImpl7 *other = dynamic_cast<const PythonCallbackImpl7*> (ns3::PeekPointer (other_base));
+        const PythonCallbackImpl14 *other = dynamic_cast<const PythonCallbackImpl14*> (ns3::PeekPointer (other_base));
         if (other != NULL)
             return (other->m_callback == m_callback);
         else
@@ -9517,16 +11175,16 @@ public:
 };
 
 
-class PythonCallbackImpl8 : public ns3::CallbackImpl<bool, ns3::Ptr<ns3::NetDevice>, ns3::Ptr<ns3::Packet const>, unsigned short, ns3::Address const&, ns3::Address const&, ns3::NetDevice::PacketType, ns3::empty, ns3::empty, ns3::empty>
+class PythonCallbackImpl15 : public ns3::CallbackImpl<bool, ns3::Ptr<ns3::NetDevice>, ns3::Ptr<ns3::Packet const>, unsigned short, ns3::Address const&, ns3::Address const&, ns3::NetDevice::PacketType, ns3::empty, ns3::empty, ns3::empty>
 {
 public:
     PyObject *m_callback;
-    PythonCallbackImpl8(PyObject *callback)
+    PythonCallbackImpl15(PyObject *callback)
     {
         Py_INCREF(callback);
         m_callback = callback;
     }
-    virtual ~PythonCallbackImpl8()
+    virtual ~PythonCallbackImpl15()
     {
         PyGILState_STATE __py_gil_state;
         __py_gil_state = (PyEval_ThreadsInitialized() ? PyGILState_Ensure() : (PyGILState_STATE) 0);
@@ -9537,7 +11195,7 @@ public:
 
     virtual bool IsEqual(ns3::Ptr<const ns3::CallbackImplBase> other_base) const
     {
-        const PythonCallbackImpl8 *other = dynamic_cast<const PythonCallbackImpl8*> (ns3::PeekPointer (other_base));
+        const PythonCallbackImpl15 *other = dynamic_cast<const PythonCallbackImpl15*> (ns3::PeekPointer (other_base));
         if (other != NULL)
             return (other->m_callback == m_callback);
         else
@@ -9563,24 +11221,31 @@ public:
         PyObject *py_boolretval;
 
         __py_gil_state = (PyEval_ThreadsInitialized() ? PyGILState_Ensure() : (PyGILState_STATE) 0);
-        wrapper_lookup_iter = PyNs3ObjectBase_wrapper_registry.find((void *) const_cast<ns3::NetDevice *> (ns3::PeekPointer (arg1)));
-        if (wrapper_lookup_iter == PyNs3ObjectBase_wrapper_registry.end()) {
-            py_NetDevice = NULL;
-        } else {
-            py_NetDevice = (PyNs3NetDevice *) wrapper_lookup_iter->second;
-            Py_INCREF(py_NetDevice);
-        }
-
-        if (py_NetDevice == NULL)
+        if (typeid(*(const_cast<ns3::NetDevice *> (ns3::PeekPointer (arg1)))).name() == typeid(PyNs3NetDevice__PythonHelper).name())
         {
-            wrapper_type = PyNs3SimpleRefCount__Ns3Object_Ns3ObjectBase_Ns3ObjectDeleter__typeid_map.lookup_wrapper(typeid(*const_cast<ns3::NetDevice *> (ns3::PeekPointer (arg1))), &PyNs3NetDevice_Type);
-            py_NetDevice = PyObject_GC_New(PyNs3NetDevice, wrapper_type);
-            py_NetDevice->inst_dict = NULL;
-
-            py_NetDevice->flags = PYBINDGEN_WRAPPER_FLAG_NONE;
-            const_cast<ns3::NetDevice *> (ns3::PeekPointer (arg1))->Ref();
+            py_NetDevice = (PyNs3NetDevice*) (((PyNs3NetDevice__PythonHelper*) const_cast<ns3::NetDevice *> (ns3::PeekPointer (arg1)))->m_pyself);
             py_NetDevice->obj = const_cast<ns3::NetDevice *> (ns3::PeekPointer (arg1));
-            PyNs3ObjectBase_wrapper_registry[(void *) py_NetDevice->obj] = (PyObject *) py_NetDevice;
+            Py_INCREF(py_NetDevice);
+        } else {
+            wrapper_lookup_iter = PyNs3ObjectBase_wrapper_registry.find((void *) const_cast<ns3::NetDevice *> (ns3::PeekPointer (arg1)));
+            if (wrapper_lookup_iter == PyNs3ObjectBase_wrapper_registry.end()) {
+                py_NetDevice = NULL;
+            } else {
+                py_NetDevice = (PyNs3NetDevice *) wrapper_lookup_iter->second;
+                Py_INCREF(py_NetDevice);
+            }
+
+            if (py_NetDevice == NULL)
+            {
+                wrapper_type = PyNs3SimpleRefCount__Ns3Object_Ns3ObjectBase_Ns3ObjectDeleter__typeid_map.lookup_wrapper(typeid(*const_cast<ns3::NetDevice *> (ns3::PeekPointer (arg1))), &PyNs3NetDevice_Type);
+                py_NetDevice = PyObject_GC_New(PyNs3NetDevice, wrapper_type);
+                py_NetDevice->inst_dict = NULL;
+
+                py_NetDevice->flags = PYBINDGEN_WRAPPER_FLAG_NONE;
+                const_cast<ns3::NetDevice *> (ns3::PeekPointer (arg1))->Ref();
+                py_NetDevice->obj = const_cast<ns3::NetDevice *> (ns3::PeekPointer (arg1));
+                PyNs3ObjectBase_wrapper_registry[(void *) py_NetDevice->obj] = (PyObject *) py_NetDevice;
+            }
         }
         wrapper_lookup_iter2 = PyNs3Empty_wrapper_registry.find((void *) const_cast<ns3::Packet *> (ns3::PeekPointer (arg2)));
         if (wrapper_lookup_iter2 == PyNs3Empty_wrapper_registry.end()) {
@@ -9635,16 +11300,16 @@ public:
 };
 
 
-class PythonCallbackImpl9 : public ns3::CallbackImpl<bool, ns3::Ptr<ns3::NetDevice>, ns3::Ptr<ns3::Packet const>, unsigned short, ns3::Address const&, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty>
+class PythonCallbackImpl16 : public ns3::CallbackImpl<bool, ns3::Ptr<ns3::NetDevice>, ns3::Ptr<ns3::Packet const>, unsigned short, ns3::Address const&, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty>
 {
 public:
     PyObject *m_callback;
-    PythonCallbackImpl9(PyObject *callback)
+    PythonCallbackImpl16(PyObject *callback)
     {
         Py_INCREF(callback);
         m_callback = callback;
     }
-    virtual ~PythonCallbackImpl9()
+    virtual ~PythonCallbackImpl16()
     {
         PyGILState_STATE __py_gil_state;
         __py_gil_state = (PyEval_ThreadsInitialized() ? PyGILState_Ensure() : (PyGILState_STATE) 0);
@@ -9655,7 +11320,7 @@ public:
 
     virtual bool IsEqual(ns3::Ptr<const ns3::CallbackImplBase> other_base) const
     {
-        const PythonCallbackImpl9 *other = dynamic_cast<const PythonCallbackImpl9*> (ns3::PeekPointer (other_base));
+        const PythonCallbackImpl16 *other = dynamic_cast<const PythonCallbackImpl16*> (ns3::PeekPointer (other_base));
         if (other != NULL)
             return (other->m_callback == m_callback);
         else
@@ -9680,24 +11345,31 @@ public:
         PyObject *py_boolretval;
 
         __py_gil_state = (PyEval_ThreadsInitialized() ? PyGILState_Ensure() : (PyGILState_STATE) 0);
-        wrapper_lookup_iter = PyNs3ObjectBase_wrapper_registry.find((void *) const_cast<ns3::NetDevice *> (ns3::PeekPointer (arg1)));
-        if (wrapper_lookup_iter == PyNs3ObjectBase_wrapper_registry.end()) {
-            py_NetDevice = NULL;
-        } else {
-            py_NetDevice = (PyNs3NetDevice *) wrapper_lookup_iter->second;
-            Py_INCREF(py_NetDevice);
-        }
-
-        if (py_NetDevice == NULL)
+        if (typeid(*(const_cast<ns3::NetDevice *> (ns3::PeekPointer (arg1)))).name() == typeid(PyNs3NetDevice__PythonHelper).name())
         {
-            wrapper_type = PyNs3SimpleRefCount__Ns3Object_Ns3ObjectBase_Ns3ObjectDeleter__typeid_map.lookup_wrapper(typeid(*const_cast<ns3::NetDevice *> (ns3::PeekPointer (arg1))), &PyNs3NetDevice_Type);
-            py_NetDevice = PyObject_GC_New(PyNs3NetDevice, wrapper_type);
-            py_NetDevice->inst_dict = NULL;
-
-            py_NetDevice->flags = PYBINDGEN_WRAPPER_FLAG_NONE;
-            const_cast<ns3::NetDevice *> (ns3::PeekPointer (arg1))->Ref();
+            py_NetDevice = (PyNs3NetDevice*) (((PyNs3NetDevice__PythonHelper*) const_cast<ns3::NetDevice *> (ns3::PeekPointer (arg1)))->m_pyself);
             py_NetDevice->obj = const_cast<ns3::NetDevice *> (ns3::PeekPointer (arg1));
-            PyNs3ObjectBase_wrapper_registry[(void *) py_NetDevice->obj] = (PyObject *) py_NetDevice;
+            Py_INCREF(py_NetDevice);
+        } else {
+            wrapper_lookup_iter = PyNs3ObjectBase_wrapper_registry.find((void *) const_cast<ns3::NetDevice *> (ns3::PeekPointer (arg1)));
+            if (wrapper_lookup_iter == PyNs3ObjectBase_wrapper_registry.end()) {
+                py_NetDevice = NULL;
+            } else {
+                py_NetDevice = (PyNs3NetDevice *) wrapper_lookup_iter->second;
+                Py_INCREF(py_NetDevice);
+            }
+
+            if (py_NetDevice == NULL)
+            {
+                wrapper_type = PyNs3SimpleRefCount__Ns3Object_Ns3ObjectBase_Ns3ObjectDeleter__typeid_map.lookup_wrapper(typeid(*const_cast<ns3::NetDevice *> (ns3::PeekPointer (arg1))), &PyNs3NetDevice_Type);
+                py_NetDevice = PyObject_GC_New(PyNs3NetDevice, wrapper_type);
+                py_NetDevice->inst_dict = NULL;
+
+                py_NetDevice->flags = PYBINDGEN_WRAPPER_FLAG_NONE;
+                const_cast<ns3::NetDevice *> (ns3::PeekPointer (arg1))->Ref();
+                py_NetDevice->obj = const_cast<ns3::NetDevice *> (ns3::PeekPointer (arg1));
+                PyNs3ObjectBase_wrapper_registry[(void *) py_NetDevice->obj] = (PyObject *) py_NetDevice;
+            }
         }
         wrapper_lookup_iter2 = PyNs3Empty_wrapper_registry.find((void *) const_cast<ns3::Packet *> (ns3::PeekPointer (arg2)));
         if (wrapper_lookup_iter2 == PyNs3Empty_wrapper_registry.end()) {
@@ -9748,16 +11420,16 @@ public:
 };
 
 
-class PythonCallbackImpl10 : public ns3::CallbackImpl<void, ns3::Ptr<ns3::NetDevice>, ns3::Ptr<ns3::Packet const>, unsigned short, ns3::Address const&, ns3::Address const&, ns3::NetDevice::PacketType, ns3::empty, ns3::empty, ns3::empty>
+class PythonCallbackImpl17 : public ns3::CallbackImpl<void, ns3::Ptr<ns3::NetDevice>, ns3::Ptr<ns3::Packet const>, unsigned short, ns3::Address const&, ns3::Address const&, ns3::NetDevice::PacketType, ns3::empty, ns3::empty, ns3::empty>
 {
 public:
     PyObject *m_callback;
-    PythonCallbackImpl10(PyObject *callback)
+    PythonCallbackImpl17(PyObject *callback)
     {
         Py_INCREF(callback);
         m_callback = callback;
     }
-    virtual ~PythonCallbackImpl10()
+    virtual ~PythonCallbackImpl17()
     {
         PyGILState_STATE __py_gil_state;
         __py_gil_state = (PyEval_ThreadsInitialized() ? PyGILState_Ensure() : (PyGILState_STATE) 0);
@@ -9768,7 +11440,7 @@ public:
 
     virtual bool IsEqual(ns3::Ptr<const ns3::CallbackImplBase> other_base) const
     {
-        const PythonCallbackImpl10 *other = dynamic_cast<const PythonCallbackImpl10*> (ns3::PeekPointer (other_base));
+        const PythonCallbackImpl17 *other = dynamic_cast<const PythonCallbackImpl17*> (ns3::PeekPointer (other_base));
         if (other != NULL)
             return (other->m_callback == m_callback);
         else
@@ -9792,24 +11464,31 @@ public:
         PyObject *args;
 
         __py_gil_state = (PyEval_ThreadsInitialized() ? PyGILState_Ensure() : (PyGILState_STATE) 0);
-        wrapper_lookup_iter = PyNs3ObjectBase_wrapper_registry.find((void *) const_cast<ns3::NetDevice *> (ns3::PeekPointer (arg1)));
-        if (wrapper_lookup_iter == PyNs3ObjectBase_wrapper_registry.end()) {
-            py_NetDevice = NULL;
-        } else {
-            py_NetDevice = (PyNs3NetDevice *) wrapper_lookup_iter->second;
-            Py_INCREF(py_NetDevice);
-        }
-
-        if (py_NetDevice == NULL)
+        if (typeid(*(const_cast<ns3::NetDevice *> (ns3::PeekPointer (arg1)))).name() == typeid(PyNs3NetDevice__PythonHelper).name())
         {
-            wrapper_type = PyNs3SimpleRefCount__Ns3Object_Ns3ObjectBase_Ns3ObjectDeleter__typeid_map.lookup_wrapper(typeid(*const_cast<ns3::NetDevice *> (ns3::PeekPointer (arg1))), &PyNs3NetDevice_Type);
-            py_NetDevice = PyObject_GC_New(PyNs3NetDevice, wrapper_type);
-            py_NetDevice->inst_dict = NULL;
-
-            py_NetDevice->flags = PYBINDGEN_WRAPPER_FLAG_NONE;
-            const_cast<ns3::NetDevice *> (ns3::PeekPointer (arg1))->Ref();
+            py_NetDevice = (PyNs3NetDevice*) (((PyNs3NetDevice__PythonHelper*) const_cast<ns3::NetDevice *> (ns3::PeekPointer (arg1)))->m_pyself);
             py_NetDevice->obj = const_cast<ns3::NetDevice *> (ns3::PeekPointer (arg1));
-            PyNs3ObjectBase_wrapper_registry[(void *) py_NetDevice->obj] = (PyObject *) py_NetDevice;
+            Py_INCREF(py_NetDevice);
+        } else {
+            wrapper_lookup_iter = PyNs3ObjectBase_wrapper_registry.find((void *) const_cast<ns3::NetDevice *> (ns3::PeekPointer (arg1)));
+            if (wrapper_lookup_iter == PyNs3ObjectBase_wrapper_registry.end()) {
+                py_NetDevice = NULL;
+            } else {
+                py_NetDevice = (PyNs3NetDevice *) wrapper_lookup_iter->second;
+                Py_INCREF(py_NetDevice);
+            }
+
+            if (py_NetDevice == NULL)
+            {
+                wrapper_type = PyNs3SimpleRefCount__Ns3Object_Ns3ObjectBase_Ns3ObjectDeleter__typeid_map.lookup_wrapper(typeid(*const_cast<ns3::NetDevice *> (ns3::PeekPointer (arg1))), &PyNs3NetDevice_Type);
+                py_NetDevice = PyObject_GC_New(PyNs3NetDevice, wrapper_type);
+                py_NetDevice->inst_dict = NULL;
+
+                py_NetDevice->flags = PYBINDGEN_WRAPPER_FLAG_NONE;
+                const_cast<ns3::NetDevice *> (ns3::PeekPointer (arg1))->Ref();
+                py_NetDevice->obj = const_cast<ns3::NetDevice *> (ns3::PeekPointer (arg1));
+                PyNs3ObjectBase_wrapper_registry[(void *) py_NetDevice->obj] = (PyObject *) py_NetDevice;
+            }
         }
         wrapper_lookup_iter2 = PyNs3Empty_wrapper_registry.find((void *) const_cast<ns3::Packet *> (ns3::PeekPointer (arg2)));
         if (wrapper_lookup_iter2 == PyNs3Empty_wrapper_registry.end()) {
@@ -9862,16 +11541,16 @@ public:
 };
 
 
-class PythonCallbackImpl11 : public ns3::CallbackImpl<void, ns3::Ptr<ns3::ArpCache const>, ns3::Ipv4Address, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty>
+class PythonCallbackImpl18 : public ns3::CallbackImpl<void, ns3::Ptr<ns3::ArpCache const>, ns3::Ipv4Address, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty, ns3::empty>
 {
 public:
     PyObject *m_callback;
-    PythonCallbackImpl11(PyObject *callback)
+    PythonCallbackImpl18(PyObject *callback)
     {
         Py_INCREF(callback);
         m_callback = callback;
     }
-    virtual ~PythonCallbackImpl11()
+    virtual ~PythonCallbackImpl18()
     {
         PyGILState_STATE __py_gil_state;
         __py_gil_state = (PyEval_ThreadsInitialized() ? PyGILState_Ensure() : (PyGILState_STATE) 0);
@@ -9882,7 +11561,7 @@ public:
 
     virtual bool IsEqual(ns3::Ptr<const ns3::CallbackImplBase> other_base) const
     {
-        const PythonCallbackImpl11 *other = dynamic_cast<const PythonCallbackImpl11*> (ns3::PeekPointer (other_base));
+        const PythonCallbackImpl18 *other = dynamic_cast<const PythonCallbackImpl18*> (ns3::PeekPointer (other_base));
         if (other != NULL)
             return (other->m_callback == m_callback);
         else
@@ -9957,7 +11636,16 @@ public:
 };
 
 
+int _wrap_convert_py2c__ns3__Ptr__lt___ns3__Object___gt__(PyObject *value, ns3::Ptr< ns3::Object > *address);
+
+
+int _wrap_convert_py2c__std__string(PyObject *value, std::string *address);
+
+
 int _wrap_convert_py2c__unsigned_int(PyObject *value, unsigned int *address);
+
+
+int _wrap_convert_py2c__ns3__Ipv4Address(PyObject *value, ns3::Ipv4Address *address);
 
 
 int _wrap_convert_py2c__bool(PyObject *value, bool *address);

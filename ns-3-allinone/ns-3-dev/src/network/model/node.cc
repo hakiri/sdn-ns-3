@@ -31,6 +31,7 @@
 #include "ns3/global-value.h"
 #include "ns3/boolean.h"
 #include "ns3/simulator.h"
+#include "ns3/arp-l3-protocol.h"
 
 namespace ns3 {
 
@@ -77,7 +78,9 @@ Node::GetTypeId (void)
 
 Node::Node()
   : m_id (0),
-    m_sid (0)
+//    m_sid (0)
+    m_sid (0),
+    m_isCognitiveRadio (false)
 {
   NS_LOG_FUNCTION (this);
   Construct ();
@@ -308,6 +311,8 @@ Node::ReceiveFromDevice (Ptr<NetDevice> device, Ptr<const Packet> packet, uint16
     {
       if (i->device == 0 ||
           (i->device != 0 && i->device == device))
+       // FIX ME
+       //   (i->device != 0))// && i->device == device))
         {
           if (i->protocol == 0 || 
               i->protocol == protocol)
@@ -360,5 +365,16 @@ Node::NotifyDeviceAdded (Ptr<NetDevice> device)
     }  
 }
  
+void
+Node::SetCognitiveRadio(bool isCR)
+{
+  m_isCognitiveRadio = isCR;
+}
+
+bool
+Node::IsCognitiveRadio(void)
+{
+  return m_isCognitiveRadio;
+}
 
 } // namespace ns3

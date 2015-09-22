@@ -141,12 +141,19 @@ operator<< (std::ostream & os, TypeHeader const & h)
 // RREQ
 //-----------------------------------------------------------------------------
 RreqHeader::RreqHeader (uint8_t flags, uint8_t reserved, uint8_t hopCount, uint32_t requestID, Ipv4Address dst,
-                        uint32_t dstSeqNo, Ipv4Address origin, uint32_t originSeqNo) :
+                        uint32_t dstSeqNo, Ipv4Address origin, uint32_t originSeqNo, uint16_t channel) :
   m_flags (flags), m_reserved (reserved), m_hopCount (hopCount), m_requestID (requestID), m_dst (dst),
-  m_dstSeqNo (dstSeqNo), m_origin (origin),  m_originSeqNo (originSeqNo)
+  m_dstSeqNo (dstSeqNo), m_origin (origin),  m_originSeqNo (originSeqNo), m_channelNo (channel)
 {
 }
-
+/*
+RreqHeader::RreqHeader (uint8_t flags, uint8_t reserved, uint8_t hopCount, uint32_t requestID, Ipv4Address dst,
+                        uint32_t dstSeqNo, Ipv4Address origin, uint32_t originSeqNo, uint16_t channel) :
+  m_flags (flags), m_reserved (reserved), m_hopCount (hopCount), m_requestID (requestID), m_dst (dst),
+  m_dstSeqNo (dstSeqNo), m_origin (origin),  m_originSeqNo (originSeqNo), m_channelNo (channel)
+{
+}
+*/
 NS_OBJECT_ENSURE_REGISTERED (RreqHeader);
 
 TypeId
@@ -183,6 +190,7 @@ RreqHeader::Serialize (Buffer::Iterator i) const
   i.WriteHtonU32 (m_dstSeqNo);
   WriteTo (i, m_origin);
   i.WriteHtonU32 (m_originSeqNo);
+  i.WriteU16(m_channelNo);
 }
 
 uint32_t
@@ -197,6 +205,7 @@ RreqHeader::Deserialize (Buffer::Iterator start)
   m_dstSeqNo = i.ReadNtohU32 ();
   ReadFrom (i, m_origin);
   m_originSeqNo = i.ReadNtohU32 ();
+  m_channelNo = i.ReadU16();
 
   uint32_t dist = i.GetDistanceFrom (start);
   NS_ASSERT (dist == GetSerializedSize ());
@@ -209,6 +218,7 @@ RreqHeader::Print (std::ostream &os) const
   os << "RREQ ID " << m_requestID << " destination: ipv4 " << m_dst
      << " sequence number " << m_dstSeqNo << " source: ipv4 "
      << m_origin << " sequence number " << m_originSeqNo
+     << " channel number: " << m_channelNo
      << " flags:" << " Gratuitous RREP " << (*this).GetGratiousRrep ()
      << " Destination only " << (*this).GetDestinationOnly ()
      << " Unknown sequence number " << (*this).GetUnknownSeqno ();
@@ -278,11 +288,20 @@ RreqHeader::operator== (RreqHeader const & o) const
 //-----------------------------------------------------------------------------
 // RREP
 //-----------------------------------------------------------------------------
-
+/*
 RrepHeader::RrepHeader (uint8_t prefixSize, uint8_t hopCount, Ipv4Address dst,
-                        uint32_t dstSeqNo, Ipv4Address origin, Time lifeTime) :
+                        uint32_t dstSeqNo, Ipv4Address origin, Time lifeTime, uint16_t channel) :
   m_flags (0), m_prefixSize (prefixSize), m_hopCount (hopCount),
-  m_dst (dst), m_dstSeqNo (dstSeqNo), m_origin (origin)
+  m_dst (dst), m_dstSeqNo (dstSeqNo), m_origin (origin), m_channelNo (channel)
+
+{
+  m_lifeTime = uint32_t (lifeTime.GetMilliSeconds ());
+}
+*/
+RrepHeader::RrepHeader (uint8_t prefixSize, uint8_t hopCount, Ipv4Address dst,
+                        uint32_t dstSeqNo, Ipv4Address origin, Time lifeTime, uint16_t channel) :
+  m_flags (0), m_prefixSize (prefixSize), m_hopCount (hopCount),
+  m_dst (dst), m_dstSeqNo (dstSeqNo), m_origin (origin), m_channelNo (channel)
 {
   m_lifeTime = uint32_t (lifeTime.GetMilliSeconds ());
 }
@@ -322,6 +341,7 @@ RrepHeader::Serialize (Buffer::Iterator i) const
   i.WriteHtonU32 (m_dstSeqNo);
   WriteTo (i, m_origin);
   i.WriteHtonU32 (m_lifeTime);
+  i.WriteU16 (m_channelNo);
 }
 
 uint32_t
@@ -336,6 +356,7 @@ RrepHeader::Deserialize (Buffer::Iterator start)
   m_dstSeqNo = i.ReadNtohU32 ();
   ReadFrom (i, m_origin);
   m_lifeTime = i.ReadNtohU32 ();
+  m_channelNo = i.ReadU16 ();
 
   uint32_t dist = i.GetDistanceFrom (start);
   NS_ASSERT (dist == GetSerializedSize ());
@@ -351,6 +372,7 @@ RrepHeader::Print (std::ostream &os) const
       os << " prefix size " << m_prefixSize;
     }
   os << " source ipv4 " << m_origin << " lifetime " << m_lifeTime
+        << " rx channel number: " << m_channelNo
      << " acknowledgment required flag " << (*this).GetAckRequired ();
 }
 

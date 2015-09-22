@@ -22,6 +22,7 @@
 #define REGULAR_WIFI_MAC_H
 
 #include "ns3/wifi-mac.h"
+#include "ns3/spectrum-manager.h"
 #include "dca-txop.h"
 #include "edca-txop-n.h"
 #include "wifi-remote-station-manager.h"
@@ -237,6 +238,12 @@ public:
   virtual void SetCompressedBlockAckTimeout (Time blockAckTimeout);
   virtual Time GetCompressedBlockAckTimeout (void) const;
 
+  /**
+  * Restart backoff access at mac layer
+  */
+  void RestartAccess(void);
+
+
 
 protected:
   virtual void DoInitialize ();
@@ -299,6 +306,14 @@ protected:
    * \return a smart pointer to EdcaTxopN
    */
   Ptr<EdcaTxopN> GetBKQueue (void) const;
+
+
+  SpectrumManager *m_spectrumManager;
+  Ptr<Node> m_node;
+  Time m_snsInterval;
+  Time m_txInterval;
+  double m_probMisdetect;
+
 
   /**
    * \param standard the phy standard to be used
@@ -410,6 +425,13 @@ protected:
    * \return true if QoS is supported, false otherwise
    */
   bool GetQosSupported () const;
+
+  bool IsTxRadio (void);
+  void SetTxRadio (bool isTx);
+  bool IsRxRadio (void);
+  void SetRxRadio (bool isRx, Ptr<Node> node, Ptr<Repository> repo,
+  Ptr<PUModel> puModel, Ptr<WifiPhy> phy);
+
 
   /**
     * This Boolean is set \c true iff this WifiMac is to model

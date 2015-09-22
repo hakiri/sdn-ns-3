@@ -395,12 +395,30 @@ InternetStackHelper::SetTcp (std::string tid, std::string n0, const AttributeVal
   m_tcpFactory.Set (n0,v0);
 }
 
+
+void
+InternetStackHelper::InstallCR (Ptr<Repository> repo, Ptr<Node> node) const
+{
+  Install (node);
+  node->GetObject <Ipv4>()->GetRoutingProtocol()->SetRepository(repo);
+}
+
 void 
 InternetStackHelper::Install (NodeContainer c) const
 {
   for (NodeContainer::Iterator i = c.Begin (); i != c.End (); ++i)
     {
       Install (*i);
+    }
+}
+
+
+void
+InternetStackHelper::InstallCR (Ptr<Repository> repo, NodeContainer c) const
+{
+  for (NodeContainer::Iterator i = c.Begin (); i != c.End (); ++i)
+    {
+      InstallCR (repo, *i);
     }
 }
 

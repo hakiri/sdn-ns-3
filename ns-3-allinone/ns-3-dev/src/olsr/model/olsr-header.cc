@@ -45,6 +45,7 @@ namespace olsr {
 /// \param seconds decimal number of seconds we want to convert.
 /// \return the number of seconds in mantissa/exponent format.
 ///
+  
 uint8_t
 SecondsToEmf (double seconds)
 {
